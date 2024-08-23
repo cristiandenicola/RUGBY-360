@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: rugby360_mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    container_name: rugby360_mosquitto
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - mosquitto_config:/mosquitto/config
+
+  node-red:
+    image: nodered/node-red:latest
+    container_name: rugby360_node-red
+    ports:
+      - "1880:1880"
+    depends_on:
+      - mosquitto
+
+  python-app:
+    image: python:3.9-slim
+    container_name: rugby360_python_app
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    command: ["python", "app/data_simulator.py"]
+    depends_on:
+      - mongodb
+      - mosquitto
+    environment:
+      - MQTT_BROKER=mosquitto
+      - MQTT_PORT=1883
+      - MONGO_URI=mongodb://mongodb:27017/
+
+volumes:
+  mongo_data:
+  mosquitto_config:
