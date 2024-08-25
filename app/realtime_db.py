@@ -6,13 +6,11 @@ from datetime import timedelta, timezone
 # MQTT settings
 MQTT_BROKER = 'localhost'
 MQTT_PORT = 1883
-MQTT_TOPIC_TEMPLATE_VELOCITY = 'football/players/{}/realtime/average_velocity'
-MQTT_TOPIC_TEMPLATE_DISTANCE = 'football/players/{}/realtime/distance_traveled'
-MQTT_TOPIC_TEMPLATE_CALORIES = 'football/players/{}/realtime/calories_consumed'
+MQTT_TOPIC_TEMPLATE_METRICS = 'rugby/players/{}/realtime/metrics'
 
 # MongoDB settings
 MONGO_URI = "mongodb://localhost:27017/"
-DATABASE_NAME = "footballDB"
+DATABASE_NAME = "rugbyDB"
 BASE_COLLECTION_NAME = "simulations"
 
 # MongoDB client
@@ -41,44 +39,47 @@ def calculate_metrics(collection_name):
 
         # Query to calculate metrics for each player
         metrics = {}
-        for player_id in range(1, 12):
-            # Calculate average velocity
-            pipeline_avg_velocity = [
-                {"$match": {"player_id": player_id}},
-                {"$group": {"_id": None, "avg_velocity": {"$avg": "$gps.velocity"}}}
-            ]
-            avg_velocity_result = list(collection.aggregate(pipeline_avg_velocity))
-            avg_velocity = avg_velocity_result[0]["avg_velocity"] if avg_velocity_result else 0.0
-
-            # Get last record for velocity and elapsed time
-            pipeline_last_record = [
+        for player_id in range(1, 16):  # Rugby has 15 players per team
+            # Aggregating all necessary metrics
+            pipeline = [
                 {"$match": {"player_id": player_id}},
                 {"$sort": {"timestamp": DESCENDING}},
                 {"$limit": 1}
             ]
-            last_record_result = list(collection.aggregate(pipeline_last_record))
-            if last_record_result:
-                last_velocity = last_record_result[0]["gps"]["velocity"]
-                last_elapsed_time = last_record_result[0]["elapsed_time"]
-                distance_traveled = last_velocity * (last_elapsed_time / 60.0)  # Convert minutes to hours for km
-                distance_km = round(distance_traveled, 2)
+            result = list(collection.aggregate(pipeline))
+            if result:
+                player_data = result[0]
+                metrics[player_id] = {
+                    "average_velocity": round(player_data["gps"]["velocity"], 2),
+                    "distance_traveled_km": round(player_data["gps"]["velocity"] * (player_data["elapsed_time"] / 60.0), 2),  # Convert minutes to hours for km
+                    "calories_consumed": round(player_data["calories_consumed"]["calories"], 2),
+                    "heart_rate": player_data["heart_rate"]["heart_rate"],
+                    "body_temperature": player_data["temperature"]["body_temperature"],
+                    "blood_pressure": {
+                        "systolic": player_data["blood_pressure"]["systolic"],
+                        "diastolic": player_data["blood_pressure"]["diastolic"]
+                    },
+                    "impacts": {
+                        "impact_count": player_data["impacts"]["impact_count"],
+                        "impact_force": player_data["impacts"]["impact_force"]
+                    }
+                }
             else:
-                distance_km = 0.0
-
-            # Calculate total calories consumed
-            pipeline_total_calories = [
-                {"$match": {"player_id": player_id}},
-                {"$group": {"_id": None, "total_calories": {"$sum": "$calories_consumed.calories"}}}
-            ]
-            total_calories_result = list(collection.aggregate(pipeline_total_calories))
-            total_calories = total_calories_result[0]["total_calories"] if total_calories_result else 0.0
-
-            # Add metrics to the dictionary
-            metrics[player_id] = {
-                "average_velocity": round(avg_velocity, 2),
-                "distance_traveled_km": distance_km,
-                "calories_consumed": round(total_calories, 2)
-            }
+                metrics[player_id] = {
+                    "average_velocity": 0.0,
+                    "distance_traveled_km": 0.0,
+                    "calories_consumed": 0.0,
+                    "heart_rate": 0,
+                    "body_temperature": 0.0,
+                    "blood_pressure": {
+                        "systolic": 0,
+                        "diastolic": 0
+                    },
+                    "impacts": {
+                        "impact_count": 0,
+                        "impact_force": 0.0
+                    }
+                }
 
         return metrics
 
@@ -92,23 +93,11 @@ def publish_metrics(metrics):
     mqtt_client.loop_start()
 
     for player_id, data in metrics.items():
-        # Publish average velocity
-        topic_velocity = MQTT_TOPIC_TEMPLATE_VELOCITY.format(player_id)
-        message_velocity = json.dumps({"average_velocity": data["average_velocity"]})
-        mqtt_client.publish(topic_velocity, message_velocity)
-        print(f"Published average velocity for Player {player_id}: {data['average_velocity']} km/h")
-
-        # Publish distance traveled
-        topic_distance = MQTT_TOPIC_TEMPLATE_DISTANCE.format(player_id)
-        message_distance = json.dumps({"distance_traveled_km": data["distance_traveled_km"]})
-        mqtt_client.publish(topic_distance, message_distance)
-        print(f"Published distance traveled for Player {player_id}: {data['distance_traveled_km']} km")
-
-        # Publish calories consumed
-        topic_calories = MQTT_TOPIC_TEMPLATE_CALORIES.format(player_id)
-        message_calories = json.dumps({"calories_consumed": data["calories_consumed"]})
-        mqtt_client.publish(topic_calories, message_calories)
-        print(f"Published calories consumed for Player {player_id}: {data['calories_consumed']} cal")
+        # Publish all metrics in a single MQTT message
+        topic_metrics = MQTT_TOPIC_TEMPLATE_METRICS.format(player_id)
+        message_metrics = json.dumps(data)
+        mqtt_client.publish(topic_metrics, message_metrics)
+        print(f"Published metrics for Player {player_id}: {data}")
 
     mqtt_client.loop_stop()
     mqtt_client.disconnect()

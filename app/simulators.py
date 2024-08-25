@@ -8,27 +8,31 @@ from datetime import datetime, timedelta, timezone
 # MQTT settings
 MQTT_BROKER = 'localhost'
 MQTT_PORT = 1883
-MQTT_TOPIC_TEMPLATE = 'football/players/{}/sensors'
-MQTT_COORDINATES_TOPIC_TEMPLATE = 'football/players/{}/sensors/coordinates'
+MQTT_TOPIC_TEMPLATE = 'rugby/players/{}/sensors'
+MQTT_COORDINATES_TOPIC_TEMPLATE = 'rugby/players/{}/sensors/coordinates'
 
 # MongoDB settings
 MONGO_URI = "mongodb://localhost:27017/"
-DATABASE_NAME = "footballDB"
+DATABASE_NAME = "rugbyDB"
 BASE_COLLECTION_NAME = "simulations"
 
-# Definition of roles and player distribution
+# Definition of roles and player distribution in rugby
 ROLES = {
-    1: 'portiere',
-    2: 'difensore',
-    3: 'difensore',
-    4: 'difensore',
-    5: 'difensore',
-    6: 'centrocampista',
-    7: 'centrocampista',
-    8: 'centrocampista',
-    9: 'attaccante',
-    10: 'attaccante',
-    11: 'attaccante'
+    1: 'pilone',
+    2: 'pilone',
+    3: 'tallonatore',
+    4: 'seconda_linea',
+    5: 'seconda_linea',
+    6: 'flanker',
+    7: 'flanker',
+    8: 'numero_otto',
+    9: 'mediano_di_mischia',
+    10: 'mediano_d_apertura',
+    11: 'centro',
+    12: 'centro',
+    13: 'ala',
+    14: 'ala',
+    15: 'estremo'
 }
 
 # MongoDB client
@@ -38,60 +42,63 @@ db = client[DATABASE_NAME]
 rome_timezone = timezone(timedelta(hours=2))
 
 def generate_metrics(player_id, role, elapsed_time):
-    # Coefficients to modify player behavior towards the end of the simulation
-    if elapsed_time > 80:
-        heart_rate_coefficient = 1.1  # Increase heart rate
-        gps_velocity_coefficient = 0.5  # Reduce movement speed
+    # Coefficienti per modificare il comportamento dei giocatori verso la fine della simulazione
+    if elapsed_time > 70:
+        heart_rate_coefficient = 1.2  # Aumenta il battito cardiaco
+        gps_velocity_coefficient = 0.6  # Riduce la velocità di movimento
     else:
         heart_rate_coefficient = 1.0
         gps_velocity_coefficient = 1.0
 
-    if role == 'portiere':
+    if role in ['pilone', 'tallonatore']:
         return {
             "player_id": player_id,
             "role": role,
-            "heart_rate": {"heart_rate": int(random.randint(120, 180) * heart_rate_coefficient)},
-            "temperature": {"body_temperature": round(random.uniform(35.5, 38), 1)},
-            "blood_pressure": {"systolic": random.randint(170, 230), "diastolic": random.randint(75, 95)},
-            "calories_consumed": {"calories": round(random.uniform(10, 13), 1)},
-            "gps": {"x": random.randint(0, 30), "y": random.randint(25, 40), "velocity": round(random.uniform(0, 6) * gps_velocity_coefficient, 1), "unic": random.randint(0, 700)},
+            "heart_rate": {"heart_rate": int(random.randint(130, 190) * heart_rate_coefficient)},
+            "temperature": {"body_temperature": round(random.uniform(36.0, 39.0), 1)},
+            "blood_pressure": {"systolic": random.randint(160, 240), "diastolic": random.randint(80, 100)},
+            "calories_consumed": {"calories": round(random.uniform(15, 25), 1)},
+            "gps": {"x": random.randint(0, 20), "y": random.randint(0, 50), "velocity": round(random.uniform(0, 10) * gps_velocity_coefficient, 1)},
+            "impacts": {"impact_count": random.randint(5, 15), "impact_force": round(random.uniform(10, 25), 1)},
             "timestamp": datetime.now(rome_timezone).isoformat(),
             "elapsed_time": elapsed_time
         }
-    elif role == 'difensore':
+    elif role in ['seconda_linea', 'flanker', 'numero_otto']:
         return {
             "player_id": player_id,
             "role": role,
-            "heart_rate": {"heart_rate": int(random.randint(120, 180) * heart_rate_coefficient)},
-            "temperature": {"body_temperature": round(random.uniform(35.5, 38.0), 1)},
-            "blood_pressure": {"systolic": random.randint(170, 230), "diastolic": random.randint(75, 95)},
-            "calories_consumed": {"calories": round(random.uniform(10, 20), 1)},
-            "gps": {"x": random.randint(5, 52), "y": random.randint(0, 65), "velocity": round(random.uniform(0, 15) * gps_velocity_coefficient, 1), "unic": random.randint(0, 1706)},
-
+            "heart_rate": {"heart_rate": int(random.randint(130, 190) * heart_rate_coefficient)},
+            "temperature": {"body_temperature": round(random.uniform(36.0, 39.0), 1)},
+            "blood_pressure": {"systolic": random.randint(160, 240), "diastolic": random.randint(80, 100)},
+            "calories_consumed": {"calories": round(random.uniform(20, 30), 1)},
+            "gps": {"x": random.randint(20, 80), "y": random.randint(0, 50), "velocity": round(random.uniform(0, 15) * gps_velocity_coefficient, 1)},
+            "impacts": {"impact_count": random.randint(10, 20), "impact_force": round(random.uniform(15, 30), 1)},
             "timestamp": datetime.now(rome_timezone).isoformat(),
             "elapsed_time": elapsed_time
         }
-    elif role == 'centrocampista':
+    elif role in ['mediano_di_mischia', 'mediano_d_apertura', 'centro']:
         return {
             "player_id": player_id,
             "role": role,
-            "heart_rate": {"heart_rate": int(random.randint(120, 180) * heart_rate_coefficient)},
-            "temperature": {"body_temperature": round(random.uniform(35.5, 38.0), 1)},
-            "blood_pressure": {"systolic": random.randint(170, 230), "diastolic": random.randint(75, 95)},
-            "calories_consumed": {"calories": round(random.uniform(10, 20), 1)},
-            "gps": {"x": random.randint(30, 80), "y": random.randint(0, 65), "velocity": round(random.uniform(0, 17) * gps_velocity_coefficient, 1), "unic": random.randint(1706, 5118)},
+            "heart_rate": {"heart_rate": int(random.randint(140, 200) * heart_rate_coefficient)},
+            "temperature": {"body_temperature": round(random.uniform(36.0, 39.0), 1)},
+            "blood_pressure": {"systolic": random.randint(160, 240), "diastolic": random.randint(80, 100)},
+            "calories_consumed": {"calories": round(random.uniform(20, 35), 1)},
+            "gps": {"x": random.randint(40, 100), "y": random.randint(0, 50), "velocity": round(random.uniform(0, 20) * gps_velocity_coefficient, 1)},
+            "impacts": {"impact_count": random.randint(5, 15), "impact_force": round(random.uniform(10, 25), 1)},
             "timestamp": datetime.now(rome_timezone).isoformat(),
             "elapsed_time": elapsed_time
         }
-    elif role == 'attaccante':
+    elif role in ['ala', 'estremo']:
         return {
             "player_id": player_id,
             "role": role,
-            "heart_rate": {"heart_rate": int(random.randint(120, 180) * heart_rate_coefficient)},
-            "temperature": {"body_temperature": round(random.uniform(35.5, 38.0), 1)},
-            "blood_pressure": {"systolic": random.randint(170, 230), "diastolic": random.randint(75, 95)},
-            "calories_consumed": {"calories": round(random.uniform(10, 20), 1)},
-            "gps": {"x": random.randint(50, 105), "y": random.randint(5, 60), "velocity": round(random.uniform(0, 17) * gps_velocity_coefficient, 1), "unic": random.randint(3412, 3412*2)},
+            "heart_rate": {"heart_rate": int(random.randint(140, 200) * heart_rate_coefficient)},
+            "temperature": {"body_temperature": round(random.uniform(36.0, 39.0), 1)},
+            "blood_pressure": {"systolic": random.randint(160, 240), "diastolic": random.randint(80, 100)},
+            "calories_consumed": {"calories": round(random.uniform(15, 30), 1)},
+            "gps": {"x": random.randint(50, 120), "y": random.randint(0, 50), "velocity": round(random.uniform(0, 25) * gps_velocity_coefficient, 1)},
+            "impacts": {"impact_count": random.randint(3, 10), "impact_force": round(random.uniform(8, 20), 1)},
             "timestamp": datetime.now(rome_timezone).isoformat(),
             "elapsed_time": elapsed_time
         }
@@ -100,7 +107,7 @@ def on_connect(client, userdata, flags, rc):
     if rc == 0:
         print(f"Connected to MQTT broker with result code {rc}")
         # Subscribe to topics for all players
-        for player_id in range(1, 12):  # Range from 1 to 11 (inclusive)
+        for player_id in range(1, 16):  # Range from 1 to 15 (inclusive)
             client.subscribe(MQTT_TOPIC_TEMPLATE.format(player_id))
     else:
         print(f"Failed to connect to MQTT broker with result code {rc}")
@@ -145,8 +152,8 @@ def main():
         elapsed_time = 0  # Initialize the simulation elapsed time
         simulation_name = datetime.now(rome_timezone).strftime("%Y%m%d_%H%M%S")  # Generate a unique name for the simulation
 
-        while elapsed_time <= 90:  # Simulate a football match duration (90 minutes)
-            for player_id in range(1, 12):  # Range from 1 to 11 (inclusive)
+        while elapsed_time <= 80:  # Simulate a rugby match duration (80 minutes)
+            for player_id in range(1, 16):  # Range from 1 to 15 (inclusive)
                 role = ROLES[player_id]
                 payload = generate_metrics(player_id, role, elapsed_time)
 
