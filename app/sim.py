@@ -42,66 +42,58 @@ db = client[DATABASE_NAME]
 rome_timezone = timezone(timedelta(hours=2))
 
 def generate_metrics(player_id, role, elapsed_time):
-    # Coefficienti per modificare il comportamento dei giocatori verso la fine della simulazione
-    if elapsed_time > 70:
-        heart_rate_coefficient = 1.2  # Aumenta il battito cardiaco
-        gps_velocity_coefficient = 0.6  # Riduce la velocità di movimento
-    else:
-        heart_rate_coefficient = 1.0
-        gps_velocity_coefficient = 1.0
+    # Dynamic coefficients based on elapsed time (e.g., increased heart rate, decreased speed)
+    fatigue_coefficient = max(1.0, min(1.5, 1.0 + 0.01 * (elapsed_time - 60)))
+    heart_rate_coefficient = fatigue_coefficient if elapsed_time > 60 else 1.0
+    gps_velocity_coefficient = 1 / fatigue_coefficient if elapsed_time > 60 else 1.0
 
+    # Generic metrics for all players
+    metrics = {
+        "player_id": player_id,
+        "role": role,
+        "heart_rate": {"heart_rate": int(random.uniform(120, 200) * heart_rate_coefficient)},
+        "temperature": {"body_temperature": round(random.uniform(36.5, 39.0), 1)},
+        "blood_pressure": {
+            "systolic": random.randint(110, 180),
+            "diastolic": random.randint(70, 120)
+        },
+        "calories_consumed": {"calories": round(random.uniform(250, 500), 1)},
+        "gps": {
+            "x": random.randint(0, 120),
+            "y": random.randint(0, 50),
+            "velocity": round(random.uniform(0, 40) * gps_velocity_coefficient, 1)
+        },
+        "impacts": {
+            "impact_count": random.randint(1, 20),
+            "impact_force": round(random.uniform(5, 50), 1)  # Increased range for impact force
+        },
+        "timestamp": datetime.now(rome_timezone).isoformat(),
+        "elapsed_time": elapsed_time
+    }
+
+    # Role-specific modifications
     if role in ['pilone', 'tallonatore']:
-        return {
-            "player_id": player_id,
-            "role": role,
-            "heart_rate": {"heart_rate": int(random.randint(130, 190) * heart_rate_coefficient)},
-            "temperature": {"body_temperature": round(random.uniform(36.0, 39.0), 1)},
-            "blood_pressure": {"systolic": random.randint(160, 240), "diastolic": random.randint(80, 100)},
-            "calories_consumed": {"calories": round(random.uniform(15, 25), 1)},
-            "gps": {"x": random.randint(0, 20), "y": random.randint(0, 50), "velocity": round(random.uniform(0, 10) * gps_velocity_coefficient, 1)},
-            "impacts": {"impact_count": random.randint(5, 15), "impact_force": round(random.uniform(10, 25), 1)},
-            "timestamp": datetime.now(rome_timezone).isoformat(),
-            "elapsed_time": elapsed_time
-        }
+        metrics["strength"] = {"max_force": round(random.uniform(400, 800), 1)}
     elif role in ['seconda_linea', 'flanker', 'numero_otto']:
-        return {
-            "player_id": player_id,
-            "role": role,
-            "heart_rate": {"heart_rate": int(random.randint(130, 190) * heart_rate_coefficient)},
-            "temperature": {"body_temperature": round(random.uniform(36.0, 39.0), 1)},
-            "blood_pressure": {"systolic": random.randint(160, 240), "diastolic": random.randint(80, 100)},
-            "calories_consumed": {"calories": round(random.uniform(20, 30), 1)},
-            "gps": {"x": random.randint(20, 80), "y": random.randint(0, 50), "velocity": round(random.uniform(0, 15) * gps_velocity_coefficient, 1)},
-            "impacts": {"impact_count": random.randint(10, 20), "impact_force": round(random.uniform(15, 30), 1)},
-            "timestamp": datetime.now(rome_timezone).isoformat(),
-            "elapsed_time": elapsed_time
-        }
+        metrics["agility"] = {"agility_score": round(random.uniform(50, 100), 1)}
     elif role in ['mediano_di_mischia', 'mediano_d_apertura', 'centro']:
-        return {
-            "player_id": player_id,
-            "role": role,
-            "heart_rate": {"heart_rate": int(random.randint(140, 200) * heart_rate_coefficient)},
-            "temperature": {"body_temperature": round(random.uniform(36.0, 39.0), 1)},
-            "blood_pressure": {"systolic": random.randint(160, 240), "diastolic": random.randint(80, 100)},
-            "calories_consumed": {"calories": round(random.uniform(20, 35), 1)},
-            "gps": {"x": random.randint(40, 100), "y": random.randint(0, 50), "velocity": round(random.uniform(0, 20) * gps_velocity_coefficient, 1)},
-            "impacts": {"impact_count": random.randint(5, 15), "impact_force": round(random.uniform(10, 25), 1)},
-            "timestamp": datetime.now(rome_timezone).isoformat(),
-            "elapsed_time": elapsed_time
-        }
+        metrics["passing_accuracy"] = {"accuracy": round(random.uniform(60, 100), 1)}
     elif role in ['ala', 'estremo']:
-        return {
-            "player_id": player_id,
-            "role": role,
-            "heart_rate": {"heart_rate": int(random.randint(140, 200) * heart_rate_coefficient)},
-            "temperature": {"body_temperature": round(random.uniform(36.0, 39.0), 1)},
-            "blood_pressure": {"systolic": random.randint(160, 240), "diastolic": random.randint(80, 100)},
-            "calories_consumed": {"calories": round(random.uniform(15, 30), 1)},
-            "gps": {"x": random.randint(50, 120), "y": random.randint(0, 50), "velocity": round(random.uniform(0, 25) * gps_velocity_coefficient, 1)},
-            "impacts": {"impact_count": random.randint(3, 10), "impact_force": round(random.uniform(8, 20), 1)},
-            "timestamp": datetime.now(rome_timezone).isoformat(),
-            "elapsed_time": elapsed_time
-        }
+        metrics["speed"] = {"top_speed": round(random.uniform(20, 45), 1)}
+
+    # Impact to play ratio: Number of impacts per 10 minutes of active play
+    metrics["impact_to_play_ratio"] = {"ratio": round(random.uniform(0.1, 2.0), 2)}
+
+    # Velocity variability: Simulated as the standard deviation of velocity readings
+    metrics["velocity_variability"] = {"variability": round(random.uniform(0.5, 3.0), 2)}
+
+    # Max heart rate simulated as the highest recorded value in a realistic range
+    metrics["max_heart_rate"] = {"max_heart_rate": int(random.uniform(160, 210))}
+
+    # Impact severity index: Derived from the force and frequency of impacts
+    metrics["impact_severity_index"] = {"severity_index": round(random.uniform(1, 10), 1)}
+
+    return metrics
 
 def on_connect(client, userdata, flags, rc):
     if rc == 0:

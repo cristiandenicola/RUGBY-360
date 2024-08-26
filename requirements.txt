@@ -1,1 +1,7 @@
 ## inserire qui librerie esterne utilizzate.
+time
+json
+random
+paho.mqtt.client
+pymongo
+datetime
