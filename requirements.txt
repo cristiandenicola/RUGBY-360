@@ -1,7 +1,3 @@
-## inserire qui librerie esterne utilizzate.
-time
-json
-random
-paho.mqtt.client
-pymongo
-datetime
+## NB. packages json, time, random and datetime should be already part of Python's standard library.
+paho-mqtt==2.1.0
+pymongo==4.6.1
