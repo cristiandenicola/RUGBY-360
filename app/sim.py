@@ -10,7 +10,6 @@ MQTT_BROKER = 'localhost'
 MQTT_PORT = 1883
 MQTT_TOPIC_TEMPLATE = 'rugby/players/{}/sensors'
 MQTT_COORDINATES_TOPIC_TEMPLATE = 'rugby/players/{}/sensors/coordinates'
-
 # MongoDB settings
 MONGO_URI = "mongodb://localhost:27017/"
 DATABASE_NAME = "rugbyDB"
@@ -80,7 +79,7 @@ def generate_metrics(player_id, role, elapsed_time):
         top_speed[player_id] = gps_velocity
 
     # Calculate heart rate based on speed and number of impacts
-    base_heart_rate = 120  # Base heart rate
+    base_heart_rate = 100  # Base heart rate
     heart_rate_increase_due_to_velocity = gps_velocity * 1.5  # Increase in heart rate due to speed
     heart_rate_increase_due_to_impacts = impact_counters[player_id] * 2  # Increase in heart rate due to impacts
     heart_rate = int(base_heart_rate + heart_rate_increase_due_to_velocity + heart_rate_increase_due_to_impacts)
@@ -214,7 +213,8 @@ def main():
                 mqtt_topic = MQTT_TOPIC_TEMPLATE.format(player_id)
                 mqtt_client.publish(mqtt_topic, json.dumps(payload))
                 store_simulation_data(simulation_name, payload)
-                print(f"Published and stored data for Player {player_id} ({role})")
+                print(f"Published sensor data for Player {player_id} to topic '{mqtt_topic}'")
+                ##print(f"Published and stored data for Player {player_id} ({role})")
 
             elapsed_time += 1  # Increment elapsed time
             time.sleep(1)  # Simulate one second of real time
