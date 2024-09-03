@@ -70,6 +70,7 @@ def calculate_metrics(collection_name):
                 impact_severity_index = round(random.uniform(1, 10), 1)  # Placeholder; adjust as needed
 
                 metrics[player_id] = {
+                    "player_id": player_id,
                     "average_velocity": round(velocity, 2),
                     "distance_traveled_km": distance_traveled_km,
                     "calories_consumed": round(calories, 2),

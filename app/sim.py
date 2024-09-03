@@ -126,6 +126,7 @@ def generate_metrics(player_id, role, elapsed_time):
         "gps": {
             "x": random.randint(0, 120),
             "y": random.randint(0, 50),
+            "unic": random.randint(1706, 5118),
             "velocity": gps_velocity,
             "top_speed": top_speed[player_id]
         },
