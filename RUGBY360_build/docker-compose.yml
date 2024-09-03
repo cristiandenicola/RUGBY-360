@@ -32,7 +32,7 @@ services:
     working_dir: /usr/src/app
     volumes:
       - .:/usr/src/app
-    command: ["python", "app/data_simulator.py"]
+    command: ["python", "app/sim.py"]
     depends_on:
       - mongodb
       - mosquitto
