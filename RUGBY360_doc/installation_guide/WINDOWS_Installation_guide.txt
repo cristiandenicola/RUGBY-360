@@ -1,0 +1,38 @@
+## Windows Setup
+
+### 1. Install DOCKER HUB [https://www.docker.com/products/docker-desktop/]
+
+a. Download Docker from the official website.
+b. Run the installer and follow the on-screen prompts.
+c. Make sure to setup correctly.
+
+### 2. Build the Project Container
+
+a. From an IDE or directly from terminal run the command: docker-compose -f path_to_docker_file up -d
+NB. path_to_docker_file indicates the path to this project file named “docker-compose.yaml” [it is located inside RUGBY360_build].
+b. Wait for it to finish building the images and then everything is started automatically (you can check on docker hub that it is RUNNING).
+
+
+### 3. Make sure you have all the python libraries you need. [you can find them in the requirements.txt file].
+a. otherwise simply run pip install requirements.txt
+
+### 4. GO TO LOCALHOST:1880
+a. Once this is done, if the container is running go to “localhost:1880”, import the flow and external libraries [point 5].
+
+### 5. Make sure you have all the Node-RED packages you need.
+a. npm install node-red-dashboard node-red-contrib-ui-heatmap node-red-node-mongodb.
+b. or do it manually from the “menage palette” window.
+
+--------------------------------------------------------------
+
+SE SI VUOLE TESTARE IL FUNZIONAMENTO -
+1. Andare su docker hub e aprire container rugby360_mosquitto (lo trovi dentro rugby360_build).
+2. Una volta aperto [IN RUNNING] andare sulla finestra "files", e cercare la cartella "config".
+3. Dentro config c'è un file chiamato "mosquitto.config", aprirlo con tasto destro > edit file.
+4. Scorrere fino alla fine del file e incollare
+
+listener 1883
+allow_anonymous true
+
+5. Salva ed esci dal file. In questo modo ora mosquitto lavorerà su porta 1883 e darà accesso a localhost.
+6. Runnare lo script che si vuole [sim.py/realtime_metrics.py] e guardare le dashboards.
