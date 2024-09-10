@@ -36,7 +36,7 @@ def calculate_metrics(collection_name):
 
         metrics = {}  # Initialize metrics dict
 
-        for player_id in range(1, 16):  # Rugby has 15 players per team
+        for player_id in range(1, 11):  # Rugby has 15 players per team
 
             pipeline = [
                 {"$match": {"player_id": player_id}},
@@ -45,11 +45,54 @@ def calculate_metrics(collection_name):
             ]
             result = list(collection.aggregate(pipeline))
 
+
+            pipeline_avg_velocity = [
+                {"$match": {"player_id": player_id}},
+                {"$group": {"_id": None, "avg_velocity": {"$avg": "$gps.velocity"}}}
+            ]
+            avg_velocity_result = list(collection.aggregate(pipeline_avg_velocity))
+            avg_velocity = avg_velocity_result[0]["avg_velocity"] if avg_velocity_result else 0.0
+
+            pipeline_avg_force = [
+                {"$match": {"player_id": player_id}},
+                {"$match": {"impacts.impact_force": {"$ne": 0}}},
+                {"$group": {"_id": None, "avg_force": {"$avg": "$impacts.impact_force"}}}
+            ]
+
+            avg_force_result = list(collection.aggregate(pipeline_avg_force))
+            avg_force = avg_force_result[0]["avg_force"] if avg_force_result else 0.0
+
+            pipeline_avg_force = [
+                {"$match": {"player_id": player_id}},
+                {"$match": {"impacts.impact_force": {"$ne": 0}}},
+                {"$group": {"_id": None, "avg_force": {"$avg": "$impacts.impact_force"}}}
+            ]
+
+            avg_force_result = list(collection.aggregate(pipeline_avg_force))
+            avg_force = avg_force_result[0]["avg_force"] if avg_force_result else 0.0
+
+            pipeline_velocity_diff = [
+            {"$match": {"player_id": player_id}},
+            {"$sort": {"timestamp": 1}},  # Ordina i documenti per timestamp in ordine crescente
+            {"$group": {
+                "_id": None,
+                "velocities": {"$push": "$gps.velocity"}  # Crea una lista di tutte le velocità
+            }}
+]
+            velocity_diff_result = list(collection.aggregate(pipeline_velocity_diff))
+            if velocity_diff_result:
+                velocities = velocity_diff_result[0]["velocities"]
+                velocity_diffs = [abs(velocities[i] - velocities[i - 1]) for i in range(1, len(velocities))]
+                velocity_variability = sum(velocity_diffs) / len(velocity_diffs) if velocity_diffs else 0.0
+            else:
+                velocity_variability = 0.0
+
+
             if result:
                 player_data = result[0]
 
                 # Extract necessary fields
-                velocity = player_data["gps"]["velocity"]
+                velocity = avg_velocity
                 elapsed_time = player_data["elapsed_time"]
                 calories = player_data["calories_consumed"]["calories"]
                 heart_rate = player_data["heart_rate"]["heart_rate"]
@@ -57,22 +100,22 @@ def calculate_metrics(collection_name):
                 systolic = player_data["blood_pressure"]["systolic"]
                 diastolic = player_data["blood_pressure"]["diastolic"]
                 impact_count = player_data["impacts"]["impact_count"]
-                impact_force = player_data["impacts"]["impact_force"]
+                impact_force =  avg_force
 
                 # Derived metrics
-                distance_traveled_km = round(velocity * (elapsed_time / 60.0), 2)  # Convert minutes to hours and meters to km
-                average_impact_force = round(impact_force / impact_count, 2) if impact_count > 0 else 0
+                distance_traveled = velocity * (elapsed_time / 60.0)  # Convert minutes to hours for km
+                distance_km = round(distance_traveled, 2)
 
                 # Calculate additional metrics
-                impact_to_play_ratio = round(random.uniform(0.1, 2.0), 2)  # Placeholder; adjust as needed for realistic data
-                velocity_variability = round(random.uniform(0.5, 3.0), 2)  # Placeholder; adjust as needed
-                max_heart_rate = int(random.uniform(160, 210))  # Placeholder; adjust as needed
+                impact_to_play_ratio = impact_count/80  
+                max_heart_rate = int(random.uniform(160, 210))
                 impact_severity_index = round(random.uniform(1, 10), 1)  # Placeholder; adjust as needed
+
 
                 metrics[player_id] = {
                     "player_id": player_id,
                     "average_velocity": round(velocity, 2),
-                    "distance_traveled_km": distance_traveled_km,
+                    "distance_traveled_km": round(distance_km, 2),
                     "calories_consumed": round(calories, 2),
                     "heart_rate": heart_rate,
                     "body_temperature": round(body_temperature, 1),
@@ -82,12 +125,12 @@ def calculate_metrics(collection_name):
                     },
                     "impacts": {
                         "impact_count": impact_count,
-                        "average_impact_force": average_impact_force
+                        "average_impact_force": impact_force
                     },
                     "impact_to_play_ratio": impact_to_play_ratio,
                     "velocity_variability": velocity_variability,
                     "max_heart_rate": max_heart_rate,
-                    "impact_severity_index": impact_severity_index
+                    "impact_severity_index": impact_severity_index,
                 }
             else:
                 metrics[player_id] = {
