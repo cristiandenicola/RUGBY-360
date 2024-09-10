@@ -2063,7 +2063,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 850,
+        "x": 820,
         "y": 40,
         "wires": [
             [
@@ -3481,7 +3481,7 @@
         "nodata": "waiting for data",
         "dot": false,
         "ymin": "0",
-        "ymax": "3",
+        "ymax": "5",
         "removeOlder": 1,
         "removeOlderPoints": "",
         "removeOlderUnit": "3600",
@@ -3502,8 +3502,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1270,
-        "y": 260,
+        "x": 830,
+        "y": 300,
         "wires": [
             []
         ]
@@ -3520,8 +3520,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 970,
-        "y": 320,
+        "x": 670,
+        "y": 300,
         "wires": [
             [
                 "4a5e5cc38a492372"
@@ -3566,8 +3566,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1840,
-        "y": 360,
+        "x": 860,
+        "y": 340,
         "wires": [
             []
         ]
@@ -3577,15 +3577,15 @@
         "type": "function",
         "z": "acbb8b19f36933fc",
         "name": "IMP_RATIO_extr",
-        "func": "// Ensure the payload is a JSON object\nif (typeof msg.payload === 'string') {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (e) {\n        node.error(\"Failed to parse JSON\", e);\n        return null;\n    }\n}\n\n// Retrieve or initialize the heartRates object from the flow context\nvar imp_to_play = flow.get('IMPACT') || {};\n\n// Check if msg.payload has the necessary 'player_id' and 'heart_rate' properties\nif (msg.payload && msg.payload.player_id !== undefined) {\n    // Extract player ID and heart rate\n    var playerId = msg.payload.player_id.toString(); // Convert player ID to string for consistency\n    var imp = msg.payload.impact_to_play_ratio;\n\n    // Update the heart rate for this player in the heartRates object\n    imp_to_play[playerId] = imp;\n\n    // Store the updated heartRates object back into the flow context\n    flow.set('IMPACT', imp_to_play);\n\n    // Prepare the data for the chart\n    var series = Object.keys(imp_to_play).map(id => [id]); // Create series names\n    var data = Object.values(imp_to_play).map(im => [im]); // Create data points for each player\n\n    // Format the payload for the graph\n    msg.payload = [\n        {\n            \"series\": series,  // Names of the players as series\n            \"data\": data,      // Heart rate values for each player\n            \"labels\": [\"\"]     // X-axis labels (e.g., time stamps can be added if needed)\n        }\n    ];\n\n    // Return the message to pass the formatted data to the graph\n    return msg;\n} else {\n    // Handle case where the required data is missing\n    node.warn(\"Heart rate data is missing for the player\");\n    return null;\n}\n",
+        "func": "// Ensure the payload is a JSON object\nif (typeof msg.payload === 'string') {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (e) {\n        node.error(\"Failed to parse JSON\", e);\n        return null;\n    }\n}\n\n// Retrieve or initialize the heartRates object from the flow context\nvar imp_to_play = flow.get('RATIO') || {};\n\n// Check if msg.payload has the necessary 'player_id' and 'heart_rate' properties\nif (msg.payload && msg.payload.player_id !== undefined) {\n    // Extract player ID and heart rate\n    var playerId = msg.payload.player_id.toString(); // Convert player ID to string for consistency\n    var imp = msg.payload.impact_to_play_ratio;\n\n    // Update the heart rate for this player in the heartRates object\n    imp_to_play[playerId] = imp;\n\n    // Store the updated heartRates object back into the flow context\n    flow.set('RATIO', imp_to_play);\n\n    // Prepare the data for the chart\n    var series = Object.keys(imp_to_play).map(id => [id]); // Create series names\n    var data = Object.values(imp_to_play).map(im => [im]); // Create data points for each player\n\n    // Format the payload for the graph\n    msg.payload = [\n        {\n            \"series\": series,  // Names of the players as series\n            \"data\": data,      // Heart rate values for each player\n            \"labels\": [\"\"]     // X-axis labels (e.g., time stamps can be added if needed)\n        }\n    ];\n\n    // Return the message to pass the formatted data to the graph\n    return msg;\n} else {\n    // Handle case where the required data is missing\n    node.warn(\"Heart rate data is missing for the player\");\n    return null;\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1440,
-        "y": 380,
+        "x": 680,
+        "y": 340,
         "wires": [
             [
                 "5dff2918219aeadb"
@@ -3630,8 +3630,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 920,
-        "y": 460,
+        "x": 860,
+        "y": 440,
         "wires": [
             []
         ]
@@ -3694,7 +3694,7 @@
         "font": "Arial Black,Arial Black,Gadget,sans-serif",
         "fontSize": "16",
         "color": "#e72323",
-        "x": 1010,
+        "x": 890,
         "y": 600,
         "wires": []
     },
@@ -3715,8 +3715,8 @@
         "font": "Arial Black,Arial Black,Gadget,sans-serif",
         "fontSize": "22",
         "color": "#000000",
-        "x": 1060,
-        "y": 540,
+        "x": 880,
+        "y": 560,
         "wires": []
     }
 ]

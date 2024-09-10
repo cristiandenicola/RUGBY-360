@@ -8,6 +8,7 @@ from datetime import timedelta, timezone
 MQTT_BROKER = 'localhost'
 MQTT_PORT = 1883
 MQTT_TOPIC_TEMPLATE_METRICS = 'rugby/players/{}/realtime/metrics'
+MQTT_TOPIC_IMPACTS = 'rugby/players/impacts'
 
 MONGO_URI = "mongodb://localhost:27017/"
 DATABASE_NAME = "rugbyDB"
@@ -30,13 +31,29 @@ def get_latest_collection():
     
     return latest_collection
 
+def calculate_impact_results(collection_name):
+    try:
+        collection = db[collection_name]
+
+        metrics = {}  # Initialize metrics dict
+
+        pipeline_impacts_above_threshold = [
+                {"$match": {"impacts.impact_force": {"$gt": 5.5}}},  # Only impacts > 5.3
+                {"$project": {"player_id": 1, "impacts.impact_force": 1, "timestamp": 1}}  # Return player_id and force
+            ]
+        impacts_result = list(collection.aggregate(pipeline_impacts_above_threshold))
+        return impacts_result
+    except Exception as e:
+        print(f"Error querying MongoDB: {e}")
+        return None
+
 def calculate_metrics(collection_name):
     try:
         collection = db[collection_name]
 
         metrics = {}  # Initialize metrics dict
 
-        for player_id in range(1, 11):  # Rugby has 15 players per team
+        for player_id in range(1, 16):  # Rugby has 15 players per team
 
             pipeline = [
                 {"$match": {"player_id": player_id}},
@@ -62,23 +79,14 @@ def calculate_metrics(collection_name):
             avg_force_result = list(collection.aggregate(pipeline_avg_force))
             avg_force = avg_force_result[0]["avg_force"] if avg_force_result else 0.0
 
-            pipeline_avg_force = [
-                {"$match": {"player_id": player_id}},
-                {"$match": {"impacts.impact_force": {"$ne": 0}}},
-                {"$group": {"_id": None, "avg_force": {"$avg": "$impacts.impact_force"}}}
-            ]
-
-            avg_force_result = list(collection.aggregate(pipeline_avg_force))
-            avg_force = avg_force_result[0]["avg_force"] if avg_force_result else 0.0
-
             pipeline_velocity_diff = [
-            {"$match": {"player_id": player_id}},
-            {"$sort": {"timestamp": 1}},  # Ordina i documenti per timestamp in ordine crescente
-            {"$group": {
-                "_id": None,
-                "velocities": {"$push": "$gps.velocity"}  # Crea una lista di tutte le velocità
-            }}
-]
+                {"$match": {"player_id": player_id}},
+                {"$sort": {"timestamp": 1}},  # Ordina i documenti per timestamp in ordine crescente
+                {"$group": {
+                    "_id": None,
+                    "velocities": {"$push": "$gps.velocity"}  # Crea una lista di tutte le velocità
+                }}
+            ]
             velocity_diff_result = list(collection.aggregate(pipeline_velocity_diff))
             if velocity_diff_result:
                 velocities = velocity_diff_result[0]["velocities"]
@@ -174,14 +182,30 @@ def publish_metrics(metrics):
     mqtt_client.loop_stop()
     mqtt_client.disconnect()
 
+def publish_impacts(impacts_result):
+    mqtt_client = mqtt.Client()
+    mqtt_client.connect(MQTT_BROKER, MQTT_PORT)
+    mqtt_client.loop_start()
+
+    message_impacts = json.dumps(impacts_result)
+    mqtt_client.publish(MQTT_TOPIC_IMPACTS, message_impacts)
+    print(f"Published impacts: {impacts_result}")
+
+    mqtt_client.loop_stop()
+    mqtt_client.disconnect()
+
 def main():
     latest_collection = get_latest_collection()
     if latest_collection:
         # Calculate metrics from the latest collection
         metrics = calculate_metrics(latest_collection)
+        impacts_result = calculate_impact_results(latest_collection)
         if metrics:
             # Publish metrics via MQTT
             publish_metrics(metrics)
+            print()
+            print(impacts_result)
+
         else:
             print("No metrics calculated.")
     else:
