@@ -1,13 +1,21 @@
 [
     {
-        "id": "f29bd3c492819409",
+        "id": "53f99c037dcacdcf",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6d003b7f94ce6f96",
         "type": "tab",
         "label": "Data Gathering (mongoDB version)",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "6e25c438e6fed382",
+        "id": "61a834ebfc894f6a",
         "type": "tab",
         "label": "Flow 1 (PLAYER)",
         "disabled": false,
@@ -15,7 +23,7 @@
         "env": []
     },
     {
-        "id": "effb74aa3070b747",
+        "id": "a272bb0068b56f17",
         "type": "tab",
         "label": "Flow 2 (TEAM)",
         "disabled": false,
@@ -23,7 +31,7 @@
         "env": []
     },
     {
-        "id": "acbb8b19f36933fc",
+        "id": "ad3a7eee14e7200e",
         "type": "tab",
         "label": "Flow 4 (END-GAME)",
         "disabled": false,
@@ -274,9 +282,9 @@
         "name": ""
     },
     {
-        "id": "bc1859be224fbc82",
+        "id": "90b8a334f09cf6e3",
         "type": "ui_spacer",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "spacer",
         "group": "97f34b737c0b33dd",
         "order": 2,
@@ -284,9 +292,9 @@
         "height": 1
     },
     {
-        "id": "d3c9012784911afc",
+        "id": "53a5cad51e6b3753",
         "type": "ui_spacer",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "spacer",
         "group": "97f34b737c0b33dd",
         "order": 4,
@@ -294,9 +302,9 @@
         "height": 1
     },
     {
-        "id": "29d9b1ad3160f0b6",
+        "id": "c1a7f5aaa9080109",
         "type": "ui_spacer",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "spacer",
         "group": "97f34b737c0b33dd",
         "order": 5,
@@ -304,9 +312,9 @@
         "height": 1
     },
     {
-        "id": "fee44035a6c44454",
+        "id": "3e134b7a8cfd8934",
         "type": "ui_spacer",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "spacer",
         "group": "97f34b737c0b33dd",
         "order": 6,
@@ -314,9 +322,9 @@
         "height": 1
     },
     {
-        "id": "f02851cbe4d30507",
+        "id": "9c09c449c2991ea7",
         "type": "ui_spacer",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "spacer",
         "group": "97f34b737c0b33dd",
         "order": 7,
@@ -324,9 +332,9 @@
         "height": 1
     },
     {
-        "id": "8117c4c05298c119",
+        "id": "34c3824cbf7ae40a",
         "type": "ui_spacer",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "spacer",
         "group": "97f34b737c0b33dd",
         "order": 8,
@@ -334,9 +342,9 @@
         "height": 1
     },
     {
-        "id": "c7a75f93696a5c04",
+        "id": "0452d0164d15df8d",
         "type": "ui_spacer",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "spacer",
         "group": "97f34b737c0b33dd",
         "order": 9,
@@ -344,9 +352,9 @@
         "height": 1
     },
     {
-        "id": "84fbe69e1efd5514",
+        "id": "6b39b1d87a087dc9",
         "type": "ui_spacer",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "spacer",
         "group": "97f34b737c0b33dd",
         "order": 11,
@@ -354,9 +362,9 @@
         "height": 1
     },
     {
-        "id": "3f36a353ce54c7d4",
+        "id": "da055de78a6b15f5",
         "type": "ui_spacer",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "spacer",
         "group": "97f34b737c0b33dd",
         "order": 12,
@@ -364,9 +372,9 @@
         "height": 1
     },
     {
-        "id": "a47ab4761e9d0ec1",
+        "id": "bb5c87e731a854b4",
         "type": "ui_spacer",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "spacer",
         "group": "97f34b737c0b33dd",
         "order": 13,
@@ -374,9 +382,9 @@
         "height": 1
     },
     {
-        "id": "1c0ce5968c0acb77",
+        "id": "86e8db2a4e30b8b1",
         "type": "ui_spacer",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "spacer",
         "group": "97f34b737c0b33dd",
         "order": 14,
@@ -384,9 +392,9 @@
         "height": 1
     },
     {
-        "id": "f16f6625567fb70f",
+        "id": "31b3337464888f2f",
         "type": "ui_spacer",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "spacer",
         "group": "97f34b737c0b33dd",
         "order": 15,
@@ -394,9 +402,9 @@
         "height": 1
     },
     {
-        "id": "58218ded3a083ad5",
+        "id": "7258c7636ff15eb5",
         "type": "ui_spacer",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "spacer",
         "group": "97f34b737c0b33dd",
         "order": 16,
@@ -404,9 +412,9 @@
         "height": 1
     },
     {
-        "id": "c1477a46f5019076",
+        "id": "90ee1941b151e53f",
         "type": "ui_spacer",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "spacer",
         "group": "97f34b737c0b33dd",
         "order": 17,
@@ -414,9 +422,9 @@
         "height": 1
     },
     {
-        "id": "f941bfe67d67f77b",
+        "id": "639c899336fc031a",
         "type": "ui_spacer",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "spacer",
         "group": "97f34b737c0b33dd",
         "order": 18,
@@ -424,9 +432,9 @@
         "height": 1
     },
     {
-        "id": "dc27cfdbc47ebb8b",
+        "id": "a30bcb0c0769a483",
         "type": "ui_spacer",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "spacer",
         "group": "97f34b737c0b33dd",
         "order": 19,
@@ -434,9 +442,9 @@
         "height": 1
     },
     {
-        "id": "7e31542e90ff0cb4",
+        "id": "fa0220b128ecc38e",
         "type": "ui_spacer",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "spacer",
         "group": "97f34b737c0b33dd",
         "order": 20,
@@ -444,9 +452,9 @@
         "height": 1
     },
     {
-        "id": "10d058eb40e1e4a5",
+        "id": "829044c91d094f0d",
         "type": "ui_spacer",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "spacer",
         "group": "97f34b737c0b33dd",
         "order": 22,
@@ -454,9 +462,9 @@
         "height": 1
     },
     {
-        "id": "1314b5fb74e12071",
+        "id": "f4f38dc3cce6c063",
         "type": "ui_spacer",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "spacer",
         "group": "97f34b737c0b33dd",
         "order": 23,
@@ -464,9 +472,9 @@
         "height": 1
     },
     {
-        "id": "400f8931696ab0ff",
+        "id": "6c0c9b4ee1e72cd2",
         "type": "ui_spacer",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "spacer",
         "group": "97f34b737c0b33dd",
         "order": 24,
@@ -474,9 +482,9 @@
         "height": 1
     },
     {
-        "id": "b9200320a4033575",
+        "id": "53296c36efc4b8f1",
         "type": "ui_spacer",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "spacer",
         "group": "97f34b737c0b33dd",
         "order": 25,
@@ -484,9 +492,9 @@
         "height": 1
     },
     {
-        "id": "b86234a2bcdb3cc6",
+        "id": "36c83d0cd8a6e6c6",
         "type": "ui_spacer",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "spacer",
         "group": "97f34b737c0b33dd",
         "order": 26,
@@ -494,9 +502,9 @@
         "height": 1
     },
     {
-        "id": "caf70b6c88c6aec8",
+        "id": "4ee4c345589caf75",
         "type": "ui_spacer",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "spacer",
         "group": "97f34b737c0b33dd",
         "order": 27,
@@ -504,9 +512,9 @@
         "height": 1
     },
     {
-        "id": "b7815710e325955f",
+        "id": "59c6768f18d20fb6",
         "type": "ui_spacer",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "spacer",
         "group": "97f34b737c0b33dd",
         "order": 28,
@@ -514,9 +522,9 @@
         "height": 1
     },
     {
-        "id": "446a6874222d2173",
+        "id": "0710a9551ca63813",
         "type": "ui_spacer",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "spacer",
         "group": "97f34b737c0b33dd",
         "order": 29,
@@ -524,9 +532,9 @@
         "height": 1
     },
     {
-        "id": "f36bd07e027c4a5f",
+        "id": "0ab115b09fd2ca1a",
         "type": "ui_spacer",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "spacer",
         "group": "97f34b737c0b33dd",
         "order": 30,
@@ -534,9 +542,9 @@
         "height": 1
     },
     {
-        "id": "52f995780f51bb3b",
+        "id": "2d6a657bf437a2f8",
         "type": "ui_spacer",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "spacer",
         "group": "7b0ea4a0077a49e2",
         "order": 5,
@@ -544,9 +552,9 @@
         "height": 1
     },
     {
-        "id": "71b6044e7c52a911",
+        "id": "1d292cf8ac21c8bf",
         "type": "ui_spacer",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "spacer",
         "group": "7b0ea4a0077a49e2",
         "order": 6,
@@ -554,9 +562,9 @@
         "height": 1
     },
     {
-        "id": "79662a0ab5c9dfdf",
+        "id": "1cb51c1a81cebaa0",
         "type": "ui_spacer",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "spacer",
         "group": "3b11b91e727413e9",
         "order": 5,
@@ -564,9 +572,9 @@
         "height": 1
     },
     {
-        "id": "1178ec14a019a43a",
+        "id": "efb952c749545f56",
         "type": "mqtt out",
-        "z": "f29bd3c492819409",
+        "z": "6d003b7f94ce6f96",
         "name": "",
         "topic": "rugby/players/sensors",
         "qos": "",
@@ -582,9 +590,9 @@
         "wires": []
     },
     {
-        "id": "897c02e285135e7b",
+        "id": "816afdaede5d6086",
         "type": "mqtt in",
-        "z": "f29bd3c492819409",
+        "z": "6d003b7f94ce6f96",
         "name": "",
         "topic": "rugby/players/sensors",
         "qos": "2",
@@ -598,14 +606,14 @@
         "y": 420,
         "wires": [
             [
-                "f515b10e1dd64dd3"
+                "a38193edd8866922"
             ]
         ]
     },
     {
-        "id": "40aac05e81b7bc12",
+        "id": "08add17e66d627a9",
         "type": "mongodb in",
-        "z": "f29bd3c492819409",
+        "z": "6d003b7f94ce6f96",
         "mongodb": "fa409388ce337d28",
         "name": "rugby360@sensor_data-gathering",
         "collection": "simulations_20240827_154742",
@@ -614,15 +622,15 @@
         "y": 100,
         "wires": [
             [
-                "7cddbb3ee821c0d2"
+                "c457803a08c737e1"
             ]
         ],
         "info": "{}"
     },
     {
-        "id": "f1f38b587b435a29",
+        "id": "ad2f8235f2bdd9a3",
         "type": "inject",
-        "z": "f29bd3c492819409",
+        "z": "6d003b7f94ce6f96",
         "name": "Trigger",
         "props": [],
         "repeat": "",
@@ -634,14 +642,14 @@
         "y": 60,
         "wires": [
             [
-                "40aac05e81b7bc12"
+                "08add17e66d627a9"
             ]
         ]
     },
     {
-        "id": "7cddbb3ee821c0d2",
+        "id": "c457803a08c737e1",
         "type": "function",
-        "z": "f29bd3c492819409",
+        "z": "6d003b7f94ce6f96",
         "name": "input_data-formatting",
         "func": "let data = msg.payload;\n\n// Create an array to hold the formatted data\nlet formattedData = data.map(doc => {\n    // Base object with common fields\n    let formattedDoc = {\n        _id: doc._id,\n        player_id: doc.player_id,\n        role: doc.role,\n        heart_rate: doc.heart_rate.heart_rate,\n        body_temperature: doc.temperature.body_temperature,\n        systolic: doc.blood_pressure.systolic,\n        diastolic: doc.blood_pressure.diastolic,\n        calories_consumed: doc.calories_consumed.calories,\n        gps_x: doc.gps.x,\n        gps_y: doc.gps.y,\n        velocity: doc.gps.velocity,\n        top_speed: doc.gps.top_speed,\n        impact_count: doc.impacts.impact_count,\n        impact_force: doc.impacts.impact_force,\n        timestamp: doc.timestamp,\n        elapsed_time: doc.elapsed_time,\n        impact_to_play_ratio: doc.impact_to_play_ratio.ratio,\n        velocity_variability: doc.velocity_variability.variability,\n        max_heart_rate: doc.max_heart_rate.max_heart_rate,\n        severity_index: doc.impact_severity_index.severity_index\n    };\n    return formattedDoc;\n});\n\nmsg.payload = formattedData;\nreturn msg;\n",
         "outputs": 1,
@@ -654,14 +662,14 @@
         "y": 100,
         "wires": [
             [
-                "1178ec14a019a43a"
+                "efb952c749545f56"
             ]
         ]
     },
     {
-        "id": "f515b10e1dd64dd3",
+        "id": "a38193edd8866922",
         "type": "split",
-        "z": "f29bd3c492819409",
+        "z": "6d003b7f94ce6f96",
         "name": "",
         "splt": "\\n",
         "spltType": "str",
@@ -674,14 +682,14 @@
         "y": 420,
         "wires": [
             [
-                "dfca8cd5b7ffd5fb"
+                "c3533357bf58bd8b"
             ]
         ]
     },
     {
-        "id": "dfca8cd5b7ffd5fb",
+        "id": "c3533357bf58bd8b",
         "type": "switch",
-        "z": "f29bd3c492819409",
+        "z": "6d003b7f94ce6f96",
         "name": "",
         "property": "payload.player_id",
         "propertyType": "msg",
@@ -769,56 +777,56 @@
         "y": 420,
         "wires": [
             [
-                "daf675c56544fd74"
+                "3fbb469fff1fb46e"
             ],
             [
-                "9cea7b42d940980e"
+                "b11994675e8b0eb6"
             ],
             [
-                "1b67ce8ca801c515"
+                "417964004201af87"
             ],
             [
-                "78a9c4d0d9658bee"
+                "77939694a3e9d6f5"
             ],
             [
-                "ac32add5adce043d"
+                "1e777d1bda543b87"
             ],
             [
-                "2ceea73bac3ad3cf"
+                "4bc5d3c06801d73c"
             ],
             [
-                "7f3676ff3a1ed2f8"
+                "4319d2aaa27caf38"
             ],
             [
-                "d5b32db138988e0b"
+                "234039ccc80bc447"
             ],
             [
-                "8d8776b2a7440f63"
+                "fcabadd21af3c1cc"
             ],
             [
-                "2d67f4b16f50aec8"
+                "56d072f58f928202"
             ],
             [
-                "c533ac86bbb5edb6"
+                "aa87972efd52eb59"
             ],
             [
-                "8c9f183fee924027"
+                "fc36412ac6b650ac"
             ],
             [
-                "2fc70fc1dc0030f7"
+                "84460daf8160cf18"
             ],
             [
-                "b87e8d0c78c18bcc"
+                "27b7340832b537fb"
             ],
             [
-                "6a1849b6ddf61b5f"
+                "153b25a047f87d3a"
             ]
         ]
     },
     {
-        "id": "daf675c56544fd74",
+        "id": "3fbb469fff1fb46e",
         "type": "mqtt out",
-        "z": "f29bd3c492819409",
+        "z": "6d003b7f94ce6f96",
         "name": "",
         "topic": "rugby/players/1/sensors_data",
         "qos": "",
@@ -834,9 +842,9 @@
         "wires": []
     },
     {
-        "id": "78a9c4d0d9658bee",
+        "id": "77939694a3e9d6f5",
         "type": "mqtt out",
-        "z": "f29bd3c492819409",
+        "z": "6d003b7f94ce6f96",
         "name": "",
         "topic": "rugby/players/4/sensors_data",
         "qos": "",
@@ -852,9 +860,9 @@
         "wires": []
     },
     {
-        "id": "d5b32db138988e0b",
+        "id": "234039ccc80bc447",
         "type": "mqtt out",
-        "z": "f29bd3c492819409",
+        "z": "6d003b7f94ce6f96",
         "name": "",
         "topic": "rugby/players/8/sensors_data",
         "qos": "",
@@ -870,9 +878,9 @@
         "wires": []
     },
     {
-        "id": "c533ac86bbb5edb6",
+        "id": "aa87972efd52eb59",
         "type": "mqtt out",
-        "z": "f29bd3c492819409",
+        "z": "6d003b7f94ce6f96",
         "name": "",
         "topic": "rugby/players/11/sensors_data",
         "qos": "",
@@ -888,9 +896,9 @@
         "wires": []
     },
     {
-        "id": "7f3676ff3a1ed2f8",
+        "id": "4319d2aaa27caf38",
         "type": "mqtt out",
-        "z": "f29bd3c492819409",
+        "z": "6d003b7f94ce6f96",
         "name": "",
         "topic": "rugby/players/7/sensors_data",
         "qos": "",
@@ -906,9 +914,9 @@
         "wires": []
     },
     {
-        "id": "8c9f183fee924027",
+        "id": "fc36412ac6b650ac",
         "type": "mqtt out",
-        "z": "f29bd3c492819409",
+        "z": "6d003b7f94ce6f96",
         "name": "",
         "topic": "rugby/players/12/sensors_data",
         "qos": "",
@@ -924,9 +932,9 @@
         "wires": []
     },
     {
-        "id": "8d8776b2a7440f63",
+        "id": "fcabadd21af3c1cc",
         "type": "mqtt out",
-        "z": "f29bd3c492819409",
+        "z": "6d003b7f94ce6f96",
         "name": "",
         "topic": "rugby/players/9/sensors_data",
         "qos": "",
@@ -942,9 +950,9 @@
         "wires": []
     },
     {
-        "id": "2ceea73bac3ad3cf",
+        "id": "4bc5d3c06801d73c",
         "type": "mqtt out",
-        "z": "f29bd3c492819409",
+        "z": "6d003b7f94ce6f96",
         "name": "",
         "topic": "rugby/players/6/sensors_data",
         "qos": "",
@@ -960,9 +968,9 @@
         "wires": []
     },
     {
-        "id": "ac32add5adce043d",
+        "id": "1e777d1bda543b87",
         "type": "mqtt out",
-        "z": "f29bd3c492819409",
+        "z": "6d003b7f94ce6f96",
         "name": "",
         "topic": "rugby/players/5/sensors_data",
         "qos": "",
@@ -978,9 +986,9 @@
         "wires": []
     },
     {
-        "id": "2d67f4b16f50aec8",
+        "id": "56d072f58f928202",
         "type": "mqtt out",
-        "z": "f29bd3c492819409",
+        "z": "6d003b7f94ce6f96",
         "name": "",
         "topic": "rugby/players/10/sensors_data",
         "qos": "",
@@ -996,9 +1004,9 @@
         "wires": []
     },
     {
-        "id": "1b67ce8ca801c515",
+        "id": "417964004201af87",
         "type": "mqtt out",
-        "z": "f29bd3c492819409",
+        "z": "6d003b7f94ce6f96",
         "name": "",
         "topic": "rugby/players/3/sensors_data",
         "qos": "",
@@ -1014,9 +1022,9 @@
         "wires": []
     },
     {
-        "id": "9cea7b42d940980e",
+        "id": "b11994675e8b0eb6",
         "type": "mqtt out",
-        "z": "f29bd3c492819409",
+        "z": "6d003b7f94ce6f96",
         "name": "",
         "topic": "rugby/players/2/sensors_data",
         "qos": "",
@@ -1032,9 +1040,9 @@
         "wires": []
     },
     {
-        "id": "2fc70fc1dc0030f7",
+        "id": "84460daf8160cf18",
         "type": "mqtt out",
-        "z": "f29bd3c492819409",
+        "z": "6d003b7f94ce6f96",
         "name": "",
         "topic": "rugby/players/13/sensors_data",
         "qos": "",
@@ -1050,9 +1058,9 @@
         "wires": []
     },
     {
-        "id": "b87e8d0c78c18bcc",
+        "id": "27b7340832b537fb",
         "type": "mqtt out",
-        "z": "f29bd3c492819409",
+        "z": "6d003b7f94ce6f96",
         "name": "",
         "topic": "rugby/players/14/sensors_data",
         "qos": "",
@@ -1068,9 +1076,9 @@
         "wires": []
     },
     {
-        "id": "6a1849b6ddf61b5f",
+        "id": "153b25a047f87d3a",
         "type": "mqtt out",
-        "z": "f29bd3c492819409",
+        "z": "6d003b7f94ce6f96",
         "name": "",
         "topic": "rugby/players/15/sensors_data",
         "qos": "",
@@ -1086,9 +1094,9 @@
         "wires": []
     },
     {
-        "id": "238161b25f0951b6",
+        "id": "2ea64382bbe7fb94",
         "type": "mqtt in",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "",
         "topic": "rugby/players/1/sensors",
         "qos": "2",
@@ -1102,14 +1110,14 @@
         "y": 120,
         "wires": [
             [
-                "90ec5621e1583916"
+                "66dbe3cbadce9c56"
             ]
         ]
     },
     {
-        "id": "ba5e16b60ffcb179",
+        "id": "de784e03a5f1a80c",
         "type": "mqtt in",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "",
         "topic": "rugby/players/2/sensors",
         "qos": "2",
@@ -1123,14 +1131,14 @@
         "y": 160,
         "wires": [
             [
-                "90ec5621e1583916"
+                "66dbe3cbadce9c56"
             ]
         ]
     },
     {
-        "id": "054c1797745562ac",
+        "id": "cdee1e49952622c4",
         "type": "mqtt in",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "",
         "topic": "rugby/players/3/sensors",
         "qos": "2",
@@ -1144,14 +1152,14 @@
         "y": 200,
         "wires": [
             [
-                "90ec5621e1583916"
+                "66dbe3cbadce9c56"
             ]
         ]
     },
     {
-        "id": "2a3e54d1f504dee4",
+        "id": "f23caac705709a33",
         "type": "mqtt in",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "",
         "topic": "rugby/players/4/sensors",
         "qos": "2",
@@ -1165,14 +1173,14 @@
         "y": 240,
         "wires": [
             [
-                "90ec5621e1583916"
+                "66dbe3cbadce9c56"
             ]
         ]
     },
     {
-        "id": "8b8f8861beddf535",
+        "id": "353a93c63f1aeff8",
         "type": "mqtt in",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "",
         "topic": "rugby/players/5/sensors",
         "qos": "2",
@@ -1186,14 +1194,14 @@
         "y": 280,
         "wires": [
             [
-                "90ec5621e1583916"
+                "66dbe3cbadce9c56"
             ]
         ]
     },
     {
-        "id": "7f1ee32ad6c80cab",
+        "id": "1562db9dc4838389",
         "type": "mqtt in",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "",
         "topic": "rugby/players/6/sensors",
         "qos": "2",
@@ -1207,14 +1215,14 @@
         "y": 320,
         "wires": [
             [
-                "90ec5621e1583916"
+                "66dbe3cbadce9c56"
             ]
         ]
     },
     {
-        "id": "854e9053e7771082",
+        "id": "9c0d513c69bf6fd6",
         "type": "mqtt in",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "",
         "topic": "rugby/players/7/sensors",
         "qos": "2",
@@ -1228,14 +1236,14 @@
         "y": 360,
         "wires": [
             [
-                "90ec5621e1583916"
+                "66dbe3cbadce9c56"
             ]
         ]
     },
     {
-        "id": "3a02c329524a44ef",
+        "id": "0c2ced5f1484ce23",
         "type": "mqtt in",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "",
         "topic": "rugby/players/8/sensors",
         "qos": "2",
@@ -1249,14 +1257,14 @@
         "y": 400,
         "wires": [
             [
-                "90ec5621e1583916"
+                "66dbe3cbadce9c56"
             ]
         ]
     },
     {
-        "id": "fbaa52fdd65b36b2",
+        "id": "1b9df29c3553c99d",
         "type": "mqtt in",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "",
         "topic": "rugby/players/9/sensors",
         "qos": "2",
@@ -1270,14 +1278,14 @@
         "y": 440,
         "wires": [
             [
-                "90ec5621e1583916"
+                "66dbe3cbadce9c56"
             ]
         ]
     },
     {
-        "id": "08cfa9a113deb508",
+        "id": "2c3d81cf1d4a91b0",
         "type": "mqtt in",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "",
         "topic": "rugby/players/10/sensors",
         "qos": "2",
@@ -1291,14 +1299,14 @@
         "y": 480,
         "wires": [
             [
-                "90ec5621e1583916"
+                "66dbe3cbadce9c56"
             ]
         ]
     },
     {
-        "id": "ec5962e8796343f1",
+        "id": "1f78651a13e75672",
         "type": "mqtt in",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "",
         "topic": "rugby/players/11/sensors",
         "qos": "2",
@@ -1312,14 +1320,14 @@
         "y": 520,
         "wires": [
             [
-                "90ec5621e1583916"
+                "66dbe3cbadce9c56"
             ]
         ]
     },
     {
-        "id": "2ae60c497969b359",
+        "id": "11350a4d39896781",
         "type": "mqtt in",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "",
         "topic": "rugby/players/12/sensors",
         "qos": "2",
@@ -1333,14 +1341,14 @@
         "y": 560,
         "wires": [
             [
-                "90ec5621e1583916"
+                "66dbe3cbadce9c56"
             ]
         ]
     },
     {
-        "id": "2cc846e117ffade3",
+        "id": "554773842d118617",
         "type": "mqtt in",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "",
         "topic": "rugby/players/13/sensors",
         "qos": "2",
@@ -1354,14 +1362,14 @@
         "y": 600,
         "wires": [
             [
-                "90ec5621e1583916"
+                "66dbe3cbadce9c56"
             ]
         ]
     },
     {
-        "id": "ac83ca4ca0529808",
+        "id": "2c2795640f99b14a",
         "type": "mqtt in",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "",
         "topic": "rugby/players/14/sensors",
         "qos": "2",
@@ -1375,14 +1383,14 @@
         "y": 640,
         "wires": [
             [
-                "90ec5621e1583916"
+                "66dbe3cbadce9c56"
             ]
         ]
     },
     {
-        "id": "7a048c6280445f90",
+        "id": "dd21edaa0e12fd7d",
         "type": "mqtt in",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "",
         "topic": "rugby/players/15/sensors",
         "qos": "2",
@@ -1396,14 +1404,14 @@
         "y": 680,
         "wires": [
             [
-                "90ec5621e1583916"
+                "66dbe3cbadce9c56"
             ]
         ]
     },
     {
-        "id": "d5f0af6556938625",
+        "id": "50f22344e54343e5",
         "type": "ui_gauge",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "HR gauge",
         "group": "3b11b91e727413e9",
         "order": 1,
@@ -1429,9 +1437,9 @@
         "wires": []
     },
     {
-        "id": "90ec5621e1583916",
+        "id": "66dbe3cbadce9c56",
         "type": "json",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "",
         "property": "payload",
         "action": "",
@@ -1440,21 +1448,21 @@
         "y": 340,
         "wires": [
             [
-                "173306722501e630",
-                "57178d47f0ea830b",
-                "0d23b32f8efb4f05",
-                "010e46909e331c3e",
-                "1a310e812f9281ad",
-                "4d4f748cc46d28e1",
-                "1ea169dfa941e378",
-                "b90ef7de9057ce96"
+                "4523f8d17b7531bc",
+                "296dcd1e5ffa1948",
+                "e7030ceccc6873bc",
+                "38eca338e23fd045",
+                "2064ff088a1063cb",
+                "5ba651cb3ef75623",
+                "fdc3334544693df6",
+                "a97a25d76432b3f4"
             ]
         ]
     },
     {
-        "id": "173306722501e630",
+        "id": "4523f8d17b7531bc",
         "type": "function",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "HR_extr",
         "func": "// Retrieve the flow variable 'player_topic'\nvar player_topic = flow.get('player_topic');\n\n// Ensure payload is a JSON object\nif (typeof msg.payload === 'string') {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (e) {\n        node.error(\"Failed to parse JSON\", e);\n        return null;\n    }\n}\n\n// Check if the current message topic matches the player_topic\nif (msg.topic === player_topic) {\n    // Check if msg.payload is an object and has the 'heart_rate' property\n    if (msg.payload && msg.payload.heart_rate.heart_rate !== undefined) {\n        // Access the 'heart_rate' value directly\n        msg.payload = msg.payload.heart_rate.heart_rate;\n    } else {\n        // Handle case where 'heart_rate' is not present\n        msg.payload = \"Heart rate data is not available\";\n    }\n    return msg;\n} else {\n    // If the topic does not match, return null\n    return null;\n}\n",
         "outputs": 1,
@@ -1467,16 +1475,16 @@
         "y": 220,
         "wires": [
             [
-                "d5f0af6556938625",
-                "31d195da3f085f63",
-                "95dc90d286f67bcb"
+                "50f22344e54343e5",
+                "6be51bc47ab9ccbc",
+                "7a67ce7401b412a1"
             ]
         ]
     },
     {
-        "id": "0a9ef13999d28137",
+        "id": "4cb1e5fa5d50a1b7",
         "type": "ui_dropdown",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "",
         "label": "Player selection",
         "tooltip": "",
@@ -1572,14 +1580,14 @@
         "y": 40,
         "wires": [
             [
-                "8ad2e07903e1eafd"
+                "581aa47f06cea467"
             ]
         ]
     },
     {
-        "id": "8ad2e07903e1eafd",
+        "id": "581aa47f06cea467",
         "type": "change",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "Set MQTT Topic",
         "rules": [
             {
@@ -1602,9 +1610,9 @@
         ]
     },
     {
-        "id": "010e46909e331c3e",
+        "id": "38eca338e23fd045",
         "type": "function",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "TIME_extr",
         "func": "// Retrieve the flow variable 'player_topic'\nvar player_topic = flow.get('player_topic');\n\n// Ensure payload is a JSON object\nif (typeof msg.payload === 'string') {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (e) {\n        node.error(\"Failed to parse JSON\", e);\n        return null;\n    }\n}\n\n// Check if the current message topic matches the player_topic\nif (msg.topic === player_topic) {\n    var elapsed_time = msg.payload.elapsed_time;\n    msg.payload = `${elapsed_time} : 00`;\n    return msg;\n} else {\n    return null;\n}\n",
         "outputs": 1,
@@ -1617,14 +1625,14 @@
         "y": 420,
         "wires": [
             [
-                "bfccd10cf9d96fe9"
+                "1bac2e1e61c57c38"
             ]
         ]
     },
     {
-        "id": "bfccd10cf9d96fe9",
+        "id": "1bac2e1e61c57c38",
         "type": "ui_text",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "group": "7b0ea4a0077a49e2",
         "order": 3,
         "width": 0,
@@ -1643,9 +1651,9 @@
         "wires": []
     },
     {
-        "id": "57178d47f0ea830b",
+        "id": "296dcd1e5ffa1948",
         "type": "function",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "SPEED_extr",
         "func": "// Retrieve the flow variable 'player_topic'\nvar player_topic = flow.get('player_topic');\n\n// Ensure payload is a JSON object\nif (typeof msg.payload === 'string') {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (e) {\n        node.error(\"Failed to parse JSON\", e);\n        return null;\n    }\n}\n\n// Check if the current message topic matches the player_topic\nif (msg.topic === player_topic) {\n    // Check if msg.payload is an object and has the 'heart_rate' property\n    if (msg.payload && msg.payload.gps.velocity !== undefined) {\n        // Access the 'heart_rate' value directly\n        msg.payload = msg.payload.gps.velocity;\n    } else {\n        // Handle case where 'heart_rate' is not present\n        msg.payload = \"Speed data is not available\";\n    }\n    return msg;\n} else {\n    // If the topic does not match, return null\n    return null;\n}\n",
         "outputs": 1,
@@ -1658,15 +1666,15 @@
         "y": 260,
         "wires": [
             [
-                "179409a9010a9116",
-                "0f25e736423a44f7"
+                "eb05d11762606fd0",
+                "74009c14398dcb1e"
             ]
         ]
     },
     {
-        "id": "179409a9010a9116",
+        "id": "eb05d11762606fd0",
         "type": "ui_gauge",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "SPD gauge",
         "group": "3b11b91e727413e9",
         "order": 3,
@@ -1692,9 +1700,9 @@
         "wires": []
     },
     {
-        "id": "0d23b32f8efb4f05",
+        "id": "e7030ceccc6873bc",
         "type": "function",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "ROLE_extr",
         "func": "// Retrieve the flow variable 'player_topic'\nvar player_topic = flow.get('player_topic');\n\n// Ensure payload is a JSON object\nif (typeof msg.payload === 'string') {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (e) {\n        node.error(\"Failed to parse JSON\", e);\n        return null;\n    }\n}\n\n// Check if the current message topic matches the player_topic\nif (msg.topic === player_topic) {\n    // Check if msg.payload is an object and has the 'heart_rate' property\n    if (msg.payload && msg.payload.role !== undefined) {\n        // Access the 'heart_rate' value directly\n        msg.payload = msg.payload.role;\n    } else {\n        // Handle case where 'heart_rate' is not present\n        msg.payload = \"Role data is not available\";\n    }\n    return msg;\n} else {\n    // If the topic does not match, return null\n    return null;\n}\n",
         "outputs": 1,
@@ -1707,14 +1715,14 @@
         "y": 380,
         "wires": [
             [
-                "c6cf54e3ea44850b"
+                "b5f5b565aa8b4553"
             ]
         ]
     },
     {
-        "id": "c6cf54e3ea44850b",
+        "id": "b5f5b565aa8b4553",
         "type": "ui_text",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "group": "7b0ea4a0077a49e2",
         "order": 4,
         "width": 0,
@@ -1733,9 +1741,9 @@
         "wires": []
     },
     {
-        "id": "578d337a58951d14",
+        "id": "7e06b19f20da54b2",
         "type": "ui_template",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "group": "7b0ea4a0077a49e2",
         "name": "CSS",
         "order": 1,
@@ -1754,9 +1762,9 @@
         ]
     },
     {
-        "id": "31d195da3f085f63",
+        "id": "6be51bc47ab9ccbc",
         "type": "ui_chart",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "HR chart",
         "group": "3b11b91e727413e9",
         "order": 2,
@@ -1798,9 +1806,9 @@
         ]
     },
     {
-        "id": "0f25e736423a44f7",
+        "id": "74009c14398dcb1e",
         "type": "ui_chart",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "SPD chart",
         "group": "3b11b91e727413e9",
         "order": 4,
@@ -1842,9 +1850,9 @@
         ]
     },
     {
-        "id": "33f1b801aabacc5a",
+        "id": "6289d59359b2073c",
         "type": "ui_chart",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "TEMP chart",
         "group": "a7f5f6ff18cd6928",
         "order": 2,
@@ -1886,9 +1894,9 @@
         ]
     },
     {
-        "id": "1a310e812f9281ad",
+        "id": "2064ff088a1063cb",
         "type": "function",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "TEMP_extr",
         "func": "// Retrieve the flow variable 'player_topic'\nvar player_topic = flow.get('player_topic');\n\n// Ensure payload is a JSON object\nif (typeof msg.payload === 'string') {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (e) {\n        node.error(\"Failed to parse JSON\", e);\n        return null;\n    }\n}\n\n// Check if the current message topic matches the player_topic\nif (msg.topic === player_topic) {\n    // Check if msg.payload is an object and has the 'heart_rate' property\n    if (msg.payload && msg.payload.temperature.body_temperature !== undefined) {\n        // Access the 'heart_rate' value directly\n        msg.payload = msg.payload.temperature.body_temperature;\n    } else {\n        // Handle case where 'heart_rate' is not present\n        msg.payload = \"Speed data is not available\";\n    }\n    return msg;\n} else {\n    // If the topic does not match, return null\n    return null;\n}\n",
         "outputs": 1,
@@ -1901,14 +1909,14 @@
         "y": 300,
         "wires": [
             [
-                "33f1b801aabacc5a"
+                "6289d59359b2073c"
             ]
         ]
     },
     {
-        "id": "3ae9d88f6dc33248",
+        "id": "e80ed03d88b2e4c5",
         "type": "ui_chart",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "B-PRESS chart",
         "group": "a7f5f6ff18cd6928",
         "order": 1,
@@ -1950,9 +1958,9 @@
         ]
     },
     {
-        "id": "4d4f748cc46d28e1",
+        "id": "5ba651cb3ef75623",
         "type": "function",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "B-PRESS_exct",
         "func": "// Retrieve the flow variable 'player_topic'\nvar player_topic = flow.get('player_topic');\n\n// Ensure payload is a JSON object\nif (typeof msg.payload === 'string') {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (e) {\n        node.error(\"Failed to parse JSON\", e);\n        return null;\n    }\n}\n\n// Check if the current message topic matches the player_topic\nif (msg.topic === player_topic) {\n    // Check if msg.payload is an object and has the 'blood_pressure' property\n    if (msg.payload && msg.payload.blood_pressure) {\n        // Access the 'systolic' and 'diastolic' values directly\n        var systolic = msg.payload.blood_pressure.systolic;\n        var diastolic = msg.payload.blood_pressure.diastolic;\n\n        // Prepare the data for the chart\n        msg.payload = [\n            {\n                \"series\": [\"Systolic\", \"Diastolic\"], // Series names\n                \"data\": [[systolic], [diastolic]],   // Data points for each series\n                \"labels\": [\"\"]         // X-axis labels\n            }\n        ];\n    } else {\n        // Handle case where 'blood_pressure' is not present\n        msg.payload = \"Blood pressure data is not available\";\n    }\n    return msg;\n} else {\n    // If the topic does not match, return null\n    return null;\n}",
         "outputs": 1,
@@ -1965,14 +1973,14 @@
         "y": 340,
         "wires": [
             [
-                "3ae9d88f6dc33248"
+                "e80ed03d88b2e4c5"
             ]
         ]
     },
     {
-        "id": "6ddfe29ab9d4c0aa",
+        "id": "60777f606d6e5d7d",
         "type": "ui_toast",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "position": "dialog",
         "displayTime": "5",
         "highlight": "",
@@ -1991,9 +1999,9 @@
         ]
     },
     {
-        "id": "95dc90d286f67bcb",
+        "id": "7a67ce7401b412a1",
         "type": "function",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "HB Check",
         "func": "\nvar hb = msg.payload\n\n\nvar message;\nif (hb > 200) {\n    message = \"Heart beat above the critical threshold, pay attention.\";\n}\n\n// Aggiornamento del messaggio di output\nmsg.payload = message;\n\nreturn msg;\n",
         "outputs": 1,
@@ -2006,14 +2014,14 @@
         "y": 80,
         "wires": [
             [
-                "6ddfe29ab9d4c0aa"
+                "60777f606d6e5d7d"
             ]
         ]
     },
     {
-        "id": "1ea169dfa941e378",
+        "id": "fdc3334544693df6",
         "type": "function",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "SEV_extr",
         "func": "// Retrieve the flow variable 'player_topic'\nvar player_topic = flow.get('player_topic');\n\n// Ensure payload is a JSON object\nif (typeof msg.payload === 'string') {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (e) {\n        node.error(\"Failed to parse JSON\", e);\n        return null;\n    }\n}\n\n// Check if the current message topic matches the player_topic\nif (msg.topic === player_topic) {\n    // Check if msg.payload is an object and has the 'heart_rate' property\n    if (msg.payload && msg.payload.impact_severity_index.severity_index !== undefined) {\n        // Access the 'heart_rate' value directly\n        msg.payload = msg.payload.impact_severity_index.severity_index;\n    } else {\n        // Handle case where 'heart_rate' is not present\n        msg.payload = \"impact rate data is not available\";\n    }\n    return msg;\n} else {\n    // If the topic does not match, return null\n    return null;\n}\n",
         "outputs": 1,
@@ -2026,14 +2034,14 @@
         "y": 180,
         "wires": [
             [
-                "96dca993d60c30cb"
+                "a44ee640220c95cc"
             ]
         ]
     },
     {
-        "id": "12574728caf98228",
+        "id": "5feb134d3f45f1c4",
         "type": "ui_toast",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "position": "prompt",
         "displayTime": "5",
         "highlight": "",
@@ -2052,9 +2060,9 @@
         ]
     },
     {
-        "id": "96dca993d60c30cb",
+        "id": "a44ee640220c95cc",
         "type": "function",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "SEV Check",
         "func": "var sev = msg.payload\n\nvar message;\nif (sev > 5.3) {\n    message = \"Critical impact, above of critical threshold, pay attention.\";\n    console.log('CRITICAL IMPACT');\n}else{\n    console.log('Continuing execution...');\n}\n\n// Aggiornamento del messaggio di output\nmsg.payload = message;\n\nreturn msg;\n",
         "outputs": 1,
@@ -2067,14 +2075,14 @@
         "y": 40,
         "wires": [
             [
-                "12574728caf98228"
+                "5feb134d3f45f1c4"
             ]
         ]
     },
     {
-        "id": "b90ef7de9057ce96",
+        "id": "a97a25d76432b3f4",
         "type": "function",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "name": "HEATMAP_exct",
         "func": "// Retrieve the flow variable 'player_topic'\nvar player_topic = flow.get('player_topic');\nvar heatmap_array = [];\n\nif (typeof msg.payload === 'string') {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (e) {\n        node.error(\"Failed to parse JSON\", e);\n        return null;\n    }\n}\n\nif (msg.topic === player_topic) {\n    var y = msg.payload.gps.unic;\n\n    for (var i = 0; i < 105 * 65; i++){\n        if (i != y) { heatmap_array.push(0) }\n        else { heatmap_array.push(100); }\n    }\n\n    msg.payload = heatmap_array;\n    return msg;\n} else { return null; }",
         "outputs": 1,
@@ -2087,14 +2095,14 @@
         "y": 460,
         "wires": [
             [
-                "0571384b0eb362b2"
+                "62a0f28d815113f3"
             ]
         ]
     },
     {
-        "id": "0571384b0eb362b2",
+        "id": "62a0f28d815113f3",
         "type": "ui_heat_map",
-        "z": "6e25c438e6fed382",
+        "z": "61a834ebfc894f6a",
         "group": "7b0ea4a0077a49e2",
         "order": 7,
         "width": 7,
@@ -2125,9 +2133,9 @@
         ]
     },
     {
-        "id": "f867f65e746400a2",
+        "id": "b689e005840983e7",
         "type": "mqtt in",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "",
         "topic": "rugby/players/1/sensors",
         "qos": "2",
@@ -2141,14 +2149,14 @@
         "y": 140,
         "wires": [
             [
-                "6a178fd617d46343"
+                "1e64df29047f32f5"
             ]
         ]
     },
     {
-        "id": "c8278c0c7fc97047",
+        "id": "2a4eab9530af1eea",
         "type": "mqtt in",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "",
         "topic": "rugby/players/2/sensors",
         "qos": "2",
@@ -2162,14 +2170,14 @@
         "y": 180,
         "wires": [
             [
-                "6a178fd617d46343"
+                "1e64df29047f32f5"
             ]
         ]
     },
     {
-        "id": "15c73aa8854ead8c",
+        "id": "2219339cef520e91",
         "type": "mqtt in",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "",
         "topic": "rugby/players/3/sensors",
         "qos": "2",
@@ -2183,14 +2191,14 @@
         "y": 220,
         "wires": [
             [
-                "6a178fd617d46343"
+                "1e64df29047f32f5"
             ]
         ]
     },
     {
-        "id": "af356f4c6379f0a2",
+        "id": "7270a4f349e744d6",
         "type": "mqtt in",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "",
         "topic": "rugby/players/4/sensors",
         "qos": "2",
@@ -2204,14 +2212,14 @@
         "y": 260,
         "wires": [
             [
-                "6a178fd617d46343"
+                "1e64df29047f32f5"
             ]
         ]
     },
     {
-        "id": "bf82d52dfc21584c",
+        "id": "45078f7df613462b",
         "type": "mqtt in",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "",
         "topic": "rugby/players/5/sensors",
         "qos": "2",
@@ -2225,14 +2233,14 @@
         "y": 300,
         "wires": [
             [
-                "6a178fd617d46343"
+                "1e64df29047f32f5"
             ]
         ]
     },
     {
-        "id": "bbe66144ecce9a10",
+        "id": "f0922ea786fad269",
         "type": "mqtt in",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "",
         "topic": "rugby/players/6/sensors",
         "qos": "2",
@@ -2246,14 +2254,14 @@
         "y": 340,
         "wires": [
             [
-                "6a178fd617d46343"
+                "1e64df29047f32f5"
             ]
         ]
     },
     {
-        "id": "8d0c1a61c3ed2325",
+        "id": "e2a722e30453c99e",
         "type": "mqtt in",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "",
         "topic": "rugby/players/7/sensors",
         "qos": "2",
@@ -2267,14 +2275,14 @@
         "y": 380,
         "wires": [
             [
-                "6a178fd617d46343"
+                "1e64df29047f32f5"
             ]
         ]
     },
     {
-        "id": "bf0fdccdfe71935b",
+        "id": "1313b33137560e16",
         "type": "mqtt in",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "",
         "topic": "rugby/players/8/sensors",
         "qos": "2",
@@ -2288,14 +2296,14 @@
         "y": 420,
         "wires": [
             [
-                "6a178fd617d46343"
+                "1e64df29047f32f5"
             ]
         ]
     },
     {
-        "id": "02a529075f693a3e",
+        "id": "2b407cf53178ac61",
         "type": "mqtt in",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "",
         "topic": "rugby/players/9/sensors",
         "qos": "2",
@@ -2309,14 +2317,14 @@
         "y": 460,
         "wires": [
             [
-                "6a178fd617d46343"
+                "1e64df29047f32f5"
             ]
         ]
     },
     {
-        "id": "c83e3b37a93b8593",
+        "id": "8a43fe0ed3a7e6c5",
         "type": "mqtt in",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "",
         "topic": "rugby/players/10/sensors",
         "qos": "2",
@@ -2330,14 +2338,14 @@
         "y": 500,
         "wires": [
             [
-                "6a178fd617d46343"
+                "1e64df29047f32f5"
             ]
         ]
     },
     {
-        "id": "fbc35bd895d18b56",
+        "id": "76934de8aac79dc2",
         "type": "mqtt in",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "",
         "topic": "rugby/players/11/sensors",
         "qos": "2",
@@ -2351,14 +2359,14 @@
         "y": 540,
         "wires": [
             [
-                "6a178fd617d46343"
+                "1e64df29047f32f5"
             ]
         ]
     },
     {
-        "id": "4ba530953388d038",
+        "id": "1073d80646343be8",
         "type": "mqtt in",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "",
         "topic": "rugby/players/12/sensors",
         "qos": "2",
@@ -2372,14 +2380,14 @@
         "y": 580,
         "wires": [
             [
-                "6a178fd617d46343"
+                "1e64df29047f32f5"
             ]
         ]
     },
     {
-        "id": "ccc21f6a4876f0df",
+        "id": "f3b299d3d0b6d744",
         "type": "mqtt in",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "",
         "topic": "rugby/players/13/sensors",
         "qos": "2",
@@ -2393,14 +2401,14 @@
         "y": 620,
         "wires": [
             [
-                "6a178fd617d46343"
+                "1e64df29047f32f5"
             ]
         ]
     },
     {
-        "id": "efbe2c8296d676c5",
+        "id": "aa7080ee594378d5",
         "type": "mqtt in",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "",
         "topic": "rugby/players/14/sensors",
         "qos": "2",
@@ -2414,14 +2422,14 @@
         "y": 660,
         "wires": [
             [
-                "6a178fd617d46343"
+                "1e64df29047f32f5"
             ]
         ]
     },
     {
-        "id": "934dac7bbce52ba7",
+        "id": "895135ed46376303",
         "type": "mqtt in",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "",
         "topic": "rugby/players/15/sensors",
         "qos": "2",
@@ -2435,14 +2443,14 @@
         "y": 700,
         "wires": [
             [
-                "6a178fd617d46343"
+                "1e64df29047f32f5"
             ]
         ]
     },
     {
-        "id": "cc26275116c4591e",
+        "id": "a48b4adda61b240d",
         "type": "function",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "ALL-HR_extr",
         "func": "// Ensure the payload is a JSON object\nif (typeof msg.payload === 'string') {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (e) {\n        node.error(\"Failed to parse JSON\", e);\n        return null;\n    }\n}\n\n// Retrieve or initialize the heartRates object from the flow context\nvar heartRates = flow.get('heartRates') || {};\n\n// Check if msg.payload has the necessary 'player_id' and 'heart_rate' properties\nif (msg.payload && msg.payload.player_id !== undefined && msg.payload.heart_rate && msg.payload.heart_rate.heart_rate !== undefined) {\n    // Extract player ID and heart rate\n    var playerId = msg.payload.player_id.toString(); // Convert player ID to string for consistency\n    var heartRate = msg.payload.heart_rate.heart_rate;\n\n    // Update the heart rate for this player in the heartRates object\n    heartRates[playerId] = heartRate;\n\n    // Store the updated heartRates object back into the flow context\n    flow.set('heartRates', heartRates);\n\n    // Prepare the data for the chart\n    var series = Object.keys(heartRates).map(id => [id]); // Create series names\n    var data = Object.values(heartRates).map(hr => [hr]); // Create data points for each player\n\n    // Format the payload for the graph\n    msg.payload = [\n        {\n            \"series\": series,  // Names of the players as series\n            \"data\": data,      // Heart rate values for each player\n            \"labels\": [\"\"]     // X-axis labels (e.g., time stamps can be added if needed)\n        }\n    ];\n\n    // Return the message to pass the formatted data to the graph\n    return msg;\n} else {\n    // Handle case where the required data is missing\n    node.warn(\"Heart rate data is missing for the player\");\n    return null;\n}\n",
         "outputs": 1,
@@ -2455,14 +2463,14 @@
         "y": 200,
         "wires": [
             [
-                "99e55d56df6601ae"
+                "5f3924b01c137cb8"
             ]
         ]
     },
     {
-        "id": "99e55d56df6601ae",
+        "id": "5f3924b01c137cb8",
         "type": "ui_chart",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "HR chart",
         "group": "a2e82b8aba30acd6",
         "order": 1,
@@ -2470,7 +2478,7 @@
         "height": 7,
         "label": "TEAM - Heart Rate",
         "chartType": "bar",
-        "legend": "false",
+        "legend": "true",
         "xformat": "HH:mm:ss",
         "interpolate": "step",
         "nodata": "waiting for data",
@@ -2504,9 +2512,9 @@
         ]
     },
     {
-        "id": "6a178fd617d46343",
+        "id": "1e64df29047f32f5",
         "type": "json",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "",
         "property": "payload",
         "action": "",
@@ -2515,20 +2523,20 @@
         "y": 360,
         "wires": [
             [
-                "cc26275116c4591e",
-                "2c861a66a7ba4676",
-                "671091b8c69088a3",
-                "4c4dc7336fd7509e",
-                "e87349512b5a93c7",
-                "eb06a0f932f1dfcf",
-                "ca0e44f9c0957e56"
+                "a48b4adda61b240d",
+                "9d67cdbe6631effd",
+                "0f2d45b44294fc84",
+                "d5bc24fea147c398",
+                "7dee7b1402ab2d7a",
+                "f84c6b9f0bf3b49b",
+                "dca83ff7d5a0104c"
             ]
         ]
     },
     {
-        "id": "e87349512b5a93c7",
+        "id": "7dee7b1402ab2d7a",
         "type": "function",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "TIME_extr",
         "func": "// Ensure payload is a JSON object\nif (typeof msg.payload === 'string') {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (e) {\n        node.error(\"Failed to parse JSON\", e);\n        return null;\n    }\n}\n\n// Check if the current message topic matches the player_topic\n    var elapsed_time = msg.payload.elapsed_time;\n    msg.payload = `${elapsed_time} : 00`;\n    return msg;\n\n",
         "outputs": 1,
@@ -2541,14 +2549,14 @@
         "y": 400,
         "wires": [
             [
-                "833cc4140a8ceafd"
+                "0f6ba1ca3e111a67"
             ]
         ]
     },
     {
-        "id": "d1c3c5382e6c86a6",
+        "id": "6fef3b3ba4b095c9",
         "type": "ui_template",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "group": "97f34b737c0b33dd",
         "name": "CSS",
         "order": 1,
@@ -2567,9 +2575,9 @@
         ]
     },
     {
-        "id": "d705108dc9d0b7ee",
+        "id": "dc4c8599f28707d6",
         "type": "ui_chart",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "SPD chart",
         "group": "a2e82b8aba30acd6",
         "order": 3,
@@ -2577,7 +2585,7 @@
         "height": 7,
         "label": "TEAM - Velocity",
         "chartType": "horizontalBar",
-        "legend": "false",
+        "legend": "true",
         "xformat": "HH:mm:ss",
         "interpolate": "step",
         "nodata": "waiting for data",
@@ -2611,9 +2619,9 @@
         ]
     },
     {
-        "id": "2c861a66a7ba4676",
+        "id": "9d67cdbe6631effd",
         "type": "function",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "ALL-SPEED_extr",
         "func": "// Ensure the payload is a JSON object\nif (typeof msg.payload === 'string') {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (e) {\n        node.error(\"Failed to parse JSON\", e);\n        return null;\n    }\n}\n\n// Retrieve or initialize the velocities object from the flow context\nvar velocities = flow.get('velocities') || {};\n\n\n // Check if msg.payload has the necessary 'player_id' and 'velocity' properties\n    if (msg.payload && msg.payload.player_id !== undefined && msg.payload.gps && msg.payload.gps.velocity !== undefined) {\n        // Extract player ID and velocity\n        var playerId = msg.payload.player_id.toString(); // Convert player ID to string for consistency\n        var velocity = msg.payload.gps.velocity;\n\n        // Update the velocity for this player in the velocities object\n        velocities[playerId] = velocity;\n\n        // Store the updated velocities object back into the flow context\n        flow.set('velocities', velocities);\n\n        // Prepare the data for the chart\n        var series = Object.keys(velocities).map(id => [id]); // Create series names\n        var data = Object.values(velocities).map(v => [v]); // Create data points for each player\n\n        // Format the payload for the graph\n        msg.payload = [\n            {\n                \"series\": series,  // Names of the players as series\n                \"data\": data,      // Velocity values for each player\n                \"labels\": [\"\"]     // X-axis labels (e.g., time stamps can be added if needed)\n            }\n        ];\n\n        // Return the message to pass the formatted data to the graph\n        return msg;\n    } else {\n        // Handle case where the required data is missing\n        node.warn(\"Velocity data is missing for the player\");\n        return null;\n    }\n",
         "outputs": 1,
@@ -2626,14 +2634,14 @@
         "y": 240,
         "wires": [
             [
-                "d705108dc9d0b7ee"
+                "dc4c8599f28707d6"
             ]
         ]
     },
     {
-        "id": "89d86fde1d71fbb2",
+        "id": "4c3d2351be8f822f",
         "type": "ui_chart",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "CAL chart",
         "group": "a2e82b8aba30acd6",
         "order": 2,
@@ -2641,7 +2649,7 @@
         "height": 7,
         "label": "TEAM - Calories",
         "chartType": "horizontalBar",
-        "legend": "false",
+        "legend": "true",
         "xformat": "auto",
         "interpolate": "step",
         "nodata": "waiting for data",
@@ -2675,9 +2683,9 @@
         ]
     },
     {
-        "id": "671091b8c69088a3",
+        "id": "0f2d45b44294fc84",
         "type": "function",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "ALL-CAL_extr",
         "func": "// Ensure the payload is a JSON object\nif (typeof msg.payload === 'string') {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (e) {\n        node.error(\"Failed to parse JSON\", e);\n        return null;\n    }\n}\n\n// Retrieve or initialize the calories object from the flow context\nvar caloriesData = flow.get('caloriesData') || {};\n\n    // Check if msg.payload has the necessary 'player_id' and 'calories' properties\n    if (msg.payload && msg.payload.player_id !== undefined && msg.payload.calories_consumed && msg.payload.calories_consumed.calories !== undefined) {\n        // Extract player ID and calories\n        var playerId = msg.payload.player_id.toString(); // Convert player ID to string for consistency\n        var calories = msg.payload.calories_consumed.calories;\n\n        // Update the calories data for this player in the caloriesData object\n        caloriesData[playerId] = calories;\n\n        // Store the updated caloriesData object back into the flow context\n        flow.set('caloriesData', caloriesData);\n\n        // Prepare the data for the chart\n        var series = Object.keys(caloriesData).map(id => [id]); // Create series names\n        var data = Object.values(caloriesData).map(c => [c]);             // Create data points for each player\n\n        // Format the payload for the graph\n        msg.payload = [\n            {\n                \"series\": series,  // Names of the players as series\n                \"data\": data,      // Calories values for each player\n                \"labels\": [\"\"]     // X-axis labels (e.g., time stamps can be added if needed)\n            }\n        ];\n\n        // Return the message to pass the formatted data to the graph\n        return msg;\n    } else {\n        // Handle case where the required data is missing\n        node.warn(\"Calories data is missing for the player\");\n        return null;\n    }\n",
         "outputs": 1,
@@ -2690,14 +2698,14 @@
         "y": 280,
         "wires": [
             [
-                "89d86fde1d71fbb2"
+                "4c3d2351be8f822f"
             ]
         ]
     },
     {
-        "id": "833cc4140a8ceafd",
+        "id": "0f6ba1ca3e111a67",
         "type": "ui_gauge",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "",
         "group": "97f34b737c0b33dd",
         "order": 3,
@@ -2723,9 +2731,9 @@
         "wires": []
     },
     {
-        "id": "113fd5fe0789c578",
+        "id": "eca7b0c5e4dc37e4",
         "type": "ui_chart",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "TEMP chart",
         "group": "a2e82b8aba30acd6",
         "order": 4,
@@ -2733,7 +2741,7 @@
         "height": 7,
         "label": "TEAM - Temperature",
         "chartType": "bar",
-        "legend": "false",
+        "legend": "true",
         "xformat": "HH:mm:ss",
         "interpolate": "step",
         "nodata": "waiting for data",
@@ -2767,9 +2775,9 @@
         ]
     },
     {
-        "id": "4c4dc7336fd7509e",
+        "id": "d5bc24fea147c398",
         "type": "function",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "ALL-TEMP_extr",
         "func": "// Ensure the payload is a JSON object\nif (typeof msg.payload === 'string') {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (e) {\n        node.error(\"Failed to parse JSON\", e);\n        return null;\n    }\n}\n\n// Retrieve or initialize the temperatures object from the flow context\nvar temperatures = flow.get('temperatures') || {};\n\n    // Check if msg.payload has the necessary 'player_id' and 'temperature' properties\n    if (msg.payload && msg.payload.player_id !== undefined && msg.payload.temperature && msg.payload.temperature.body_temperature !== undefined) {\n        // Extract player ID and temperature\n        var playerId = msg.payload.player_id.toString(); // Convert player ID to string for consistency\n        var temperature = msg.payload.temperature.body_temperature;\n\n        // Update the temperature for this player in the temperatures object\n        temperatures[playerId] = temperature;\n\n        // Store the updated temperatures object back into the flow context\n        flow.set('temperatures', temperatures);\n\n        // Prepare the data for the chart\n        var series = Object.keys(temperatures).map(id => [id]); // Create series names\n        var data = Object.values(temperatures).map(t => [t]);            // Create data points for each player\n\n        // Format the payload for the graph\n        msg.payload = [\n            {\n                \"series\": series,  // Names of the players as series\n                \"data\": data,      // Temperature values for each player\n                \"labels\": [\"\"]     // X-axis labels (e.g., time stamps can be added if needed)\n            }\n        ];\n\n        // Return the message to pass the formatted data to the graph\n        return msg;\n    } else {\n        // Handle case where the required data is missing\n        node.warn(\"Temperature data is missing for the player\");\n        return null;\n    }\n",
         "outputs": 1,
@@ -2782,14 +2790,14 @@
         "y": 320,
         "wires": [
             [
-                "113fd5fe0789c578"
+                "eca7b0c5e4dc37e4"
             ]
         ]
     },
     {
-        "id": "eb06a0f932f1dfcf",
+        "id": "f84c6b9f0bf3b49b",
         "type": "function",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "ALL-SEV_extr",
         "func": "// Ensure the payload is a JSON object\nif (typeof msg.payload === 'string') {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (e) {\n        node.error(\"Failed to parse JSON\", e);\n        return null;\n    }\n}\n\n// Retrieve or initialize the severityIndices object from the flow context\nvar severityIndices = flow.get('severityIndices') || {};\n\n    // Check if msg.payload has the necessary 'player_id' and 'impact_severity_index' properties\n    if (msg.payload && msg.payload.player_id !== undefined && msg.payload.impact_severity_index && msg.payload.impact_severity_index.severity_index !== undefined) {\n        // Extract player ID and severity index\n        var playerId = msg.payload.player_id.toString(); // Convert player ID to string for consistency\n        var severityIndex = msg.payload.impact_severity_index.severity_index;\n\n        // Update the severity index for this player in the severityIndices object\n        severityIndices[playerId] = severityIndex;\n\n        // Store the updated severityIndices object back into the flow context\n        flow.set('severityIndices', severityIndices);\n\n        // Prepare the data for the chart\n        var series = Object.keys(severityIndices).map(id => [id]); // Create series names\n        var data = Object.values(severityIndices).map(si => [si]);           // Create data points for each player\n\n        // Format the payload for the graph\n        msg.payload = [\n            {\n                \"series\": series,  // Names of the players as series\n                \"data\": data,      // Severity index values for each player\n                \"labels\": [\"\"]     // X-axis labels (e.g., time stamps can be added if needed)\n            }\n        ];\n\n        // Return the message to pass the formatted data to the graph\n        return msg;\n    } else {\n        // Handle case where the required data is missing\n        node.warn(\"Severity index data is missing for the player\");\n        return null;\n    }\n",
         "outputs": 1,
@@ -2802,14 +2810,14 @@
         "y": 440,
         "wires": [
             [
-                "7acf5c133f381842"
+                "2c7737d72d536347"
             ]
         ]
     },
     {
-        "id": "7acf5c133f381842",
+        "id": "2c7737d72d536347",
         "type": "ui_chart",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "SEV chart",
         "group": "97f34b737c0b33dd",
         "order": 21,
@@ -2817,7 +2825,7 @@
         "height": "6",
         "label": "TEAM - Severity INDX",
         "chartType": "bar",
-        "legend": "false",
+        "legend": "true",
         "xformat": "HH:mm:ss",
         "interpolate": "step",
         "nodata": "waiting for data",
@@ -2851,9 +2859,9 @@
         ]
     },
     {
-        "id": "ca0e44f9c0957e56",
+        "id": "dca83ff7d5a0104c",
         "type": "function",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "ALL-SEV-COUNT_extr",
         "func": "// Ensure the payload is a JSON object\nif (typeof msg.payload === 'string') {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (e) {\n        node.error(\"Failed to parse JSON\", e);\n        return null;\n    }\n}\n\n// Retrieve or initialize the impactCounts object from the flow context\nvar impactCounts = flow.get('impactCounts') || {};\n\n// Check if msg.payload has the necessary 'player_id' and 'impacts' properties\nif (msg.payload && msg.payload.player_id !== undefined && msg.payload.impacts && msg.payload.impacts.impact_count !== undefined) {\n    // Extract player ID and impact count\n    var playerId = msg.payload.player_id.toString(); // Convert player ID to string for consistency\n    var impactCount = msg.payload.impacts.impact_count;\n\n    // Update the impact count for this player in the impactCounts object\n    impactCounts[playerId] = impactCount;\n\n    // Store the updated impactCounts object back into the flow context\n    flow.set('impactCounts', impactCounts);\n\n    // Prepare the data for the chart\n    var series = Object.keys(impactCounts).map(id => [id]); // Create series names\n    var data = Object.values(impactCounts).map(ic => [ic]);           // Create data points for each player\n\n    // Format the payload for the graph\n    msg.payload = [\n        {\n            \"series\": series,  // Names of the players as series\n            \"data\": data,      // Impact count values for each player\n            \"labels\": [\"\"]     // X-axis labels (e.g., time stamps can be added if needed)\n        }\n    ];\n\n    // Return the message to pass the formatted data to the graph\n    return msg;\n} else {\n    // Handle case where the required data is missing\n    node.warn(\"Impact count data is missing for the player\");\n    return null;\n}\n",
         "outputs": 1,
@@ -2866,14 +2874,14 @@
         "y": 480,
         "wires": [
             [
-                "65639ea1c617c6fc"
+                "b71576455c0d1484"
             ]
         ]
     },
     {
-        "id": "65639ea1c617c6fc",
+        "id": "b71576455c0d1484",
         "type": "ui_chart",
-        "z": "effb74aa3070b747",
+        "z": "a272bb0068b56f17",
         "name": "SEV-COUNT chart",
         "group": "97f34b737c0b33dd",
         "order": 10,
@@ -2881,7 +2889,7 @@
         "height": 5,
         "label": "TEAM - Impact COUNT",
         "chartType": "horizontalBar",
-        "legend": "false",
+        "legend": "true",
         "xformat": "HH:mm:ss",
         "interpolate": "step",
         "nodata": "waiting for data",
@@ -2915,9 +2923,9 @@
         ]
     },
     {
-        "id": "e939dca579f183eb",
+        "id": "cb5ddc09dbe15faf",
         "type": "mqtt in",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "",
         "topic": "rugby/players/1/realtime/metrics",
         "qos": "2",
@@ -2931,14 +2939,14 @@
         "y": 120,
         "wires": [
             [
-                "efeffd574eb662d5"
+                "af158ea893305abc"
             ]
         ]
     },
     {
-        "id": "11e63f852717fdec",
+        "id": "0dbe2f18d36ee48b",
         "type": "mqtt in",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "",
         "topic": "rugby/players/2/realtime/metrics",
         "qos": "2",
@@ -2952,14 +2960,14 @@
         "y": 160,
         "wires": [
             [
-                "efeffd574eb662d5"
+                "af158ea893305abc"
             ]
         ]
     },
     {
-        "id": "831bdf55da2f7ef7",
+        "id": "9431ebc6e52530e4",
         "type": "mqtt in",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "",
         "topic": "rugby/players/3/realtime/metrics",
         "qos": "2",
@@ -2973,14 +2981,14 @@
         "y": 200,
         "wires": [
             [
-                "efeffd574eb662d5"
+                "af158ea893305abc"
             ]
         ]
     },
     {
-        "id": "0f222bbfd04846ea",
+        "id": "fd0ff55df64c779f",
         "type": "mqtt in",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "",
         "topic": "rugby/players/4/realtime/metrics",
         "qos": "2",
@@ -2994,14 +3002,14 @@
         "y": 240,
         "wires": [
             [
-                "efeffd574eb662d5"
+                "af158ea893305abc"
             ]
         ]
     },
     {
-        "id": "7cdb09226886a264",
+        "id": "8494532ca5fb57c5",
         "type": "mqtt in",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "",
         "topic": "rugby/players/5/realtime/metrics",
         "qos": "2",
@@ -3015,14 +3023,14 @@
         "y": 280,
         "wires": [
             [
-                "efeffd574eb662d5"
+                "af158ea893305abc"
             ]
         ]
     },
     {
-        "id": "d0ba978fe6b26d7a",
+        "id": "2ba6239475b5574b",
         "type": "mqtt in",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "",
         "topic": "rugby/players/6/realtime/metrics",
         "qos": "2",
@@ -3036,14 +3044,14 @@
         "y": 320,
         "wires": [
             [
-                "efeffd574eb662d5"
+                "af158ea893305abc"
             ]
         ]
     },
     {
-        "id": "0df6c8cd5a91eabb",
+        "id": "7cac6e3993b5ac09",
         "type": "mqtt in",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "",
         "topic": "rugby/players/7/realtime/metrics",
         "qos": "2",
@@ -3057,14 +3065,14 @@
         "y": 360,
         "wires": [
             [
-                "efeffd574eb662d5"
+                "af158ea893305abc"
             ]
         ]
     },
     {
-        "id": "559c93010c87ea72",
+        "id": "59923425563a7d60",
         "type": "mqtt in",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "",
         "topic": "rugby/players/8/realtime/metrics",
         "qos": "2",
@@ -3078,14 +3086,14 @@
         "y": 400,
         "wires": [
             [
-                "efeffd574eb662d5"
+                "af158ea893305abc"
             ]
         ]
     },
     {
-        "id": "f71dbb4089d746e5",
+        "id": "408989a57d6f6a18",
         "type": "mqtt in",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "",
         "topic": "rugby/players/9/realtime/metrics",
         "qos": "2",
@@ -3099,14 +3107,14 @@
         "y": 440,
         "wires": [
             [
-                "efeffd574eb662d5"
+                "af158ea893305abc"
             ]
         ]
     },
     {
-        "id": "35072c7f7e6744db",
+        "id": "a7ca26e83da2ff03",
         "type": "mqtt in",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "",
         "topic": "rugby/players/10/realtime/metrics",
         "qos": "2",
@@ -3120,14 +3128,14 @@
         "y": 480,
         "wires": [
             [
-                "efeffd574eb662d5"
+                "af158ea893305abc"
             ]
         ]
     },
     {
-        "id": "8be5f280adfd4644",
+        "id": "70637f14a69416f1",
         "type": "mqtt in",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "",
         "topic": "rugby/players/11/realtime/metrics",
         "qos": "2",
@@ -3141,14 +3149,14 @@
         "y": 520,
         "wires": [
             [
-                "efeffd574eb662d5"
+                "af158ea893305abc"
             ]
         ]
     },
     {
-        "id": "8f14388b724aeba1",
+        "id": "516de87c5f4c4dcf",
         "type": "mqtt in",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "",
         "topic": "rugby/players/12/realtime/metrics",
         "qos": "2",
@@ -3162,14 +3170,14 @@
         "y": 560,
         "wires": [
             [
-                "efeffd574eb662d5"
+                "af158ea893305abc"
             ]
         ]
     },
     {
-        "id": "987e66da09490381",
+        "id": "3eba0537cd4471e8",
         "type": "mqtt in",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "",
         "topic": "rugby/players/13/realtime/metrics",
         "qos": "2",
@@ -3183,14 +3191,14 @@
         "y": 600,
         "wires": [
             [
-                "efeffd574eb662d5"
+                "af158ea893305abc"
             ]
         ]
     },
     {
-        "id": "94d50d2136d7cac4",
+        "id": "7b20551976975d9a",
         "type": "mqtt in",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "",
         "topic": "rugby/players/14/realtime/metrics",
         "qos": "2",
@@ -3204,14 +3212,14 @@
         "y": 640,
         "wires": [
             [
-                "efeffd574eb662d5"
+                "af158ea893305abc"
             ]
         ]
     },
     {
-        "id": "ae98061408593f81",
+        "id": "53ef2595e73ac950",
         "type": "mqtt in",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "",
         "topic": "rugby/players/15/realtime/metrics",
         "qos": "2",
@@ -3225,14 +3233,14 @@
         "y": 680,
         "wires": [
             [
-                "efeffd574eb662d5"
+                "af158ea893305abc"
             ]
         ]
     },
     {
-        "id": "efeffd574eb662d5",
+        "id": "af158ea893305abc",
         "type": "json",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "",
         "property": "payload",
         "action": "",
@@ -3241,20 +3249,20 @@
         "y": 380,
         "wires": [
             [
-                "c5c1c36acf9e173b",
-                "74141e2021f296dd",
-                "c0bef20e16d1f8db",
-                "ce13747852b67acf",
-                "da2ce1329675a617",
-                "08ae540b66c08abd",
-                "61da415c99a457e8"
+                "971317788ada68a1",
+                "98267c06e395637f",
+                "dc1159204d8cd322",
+                "58c60e948e4d57be",
+                "6aa9475f7e1a3ed8",
+                "413b0ee41b4d8bbe",
+                "80679a8ed50576ca"
             ]
         ]
     },
     {
-        "id": "3cdc82b06f6ea1c8",
+        "id": "9f538dec8317e06b",
         "type": "ui_chart",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "AVG_SPEED",
         "group": "914464c7227e1a69",
         "order": 1,
@@ -3296,9 +3304,9 @@
         ]
     },
     {
-        "id": "c5c1c36acf9e173b",
+        "id": "971317788ada68a1",
         "type": "function",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "AVG_SPEED_extr",
         "func": "// Ensure the payload is a JSON object\nif (typeof msg.payload === 'string') {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (e) {\n        node.error(\"Failed to parse JSON\", e);\n        return null;\n    }\n}\n\n// Retrieve or initialize the heartRates object from the flow context\nvar avg_speed = flow.get('AVG_SPEED') || {};\n\n// Check if msg.payload has the necessary 'player_id' and 'heart_rate' properties\nif (msg.payload && msg.payload.player_id !== undefined) {\n    // Extract player ID and heart rate\n    var playerId = msg.payload.player_id.toString(); // Convert player ID to string for consistency\n    var avg_s = msg.payload.average_velocity;\n\n    // Update the heart rate for this player in the heartRates object\n    avg_speed[playerId] = avg_s;\n\n    // Store the updated heartRates object back into the flow context\n    flow.set('AVG_SPEED', avg_speed);\n\n    // Prepare the data for the chart\n    var series = Object.keys(avg_speed).map(id => [id]); // Create series names\n    var data = Object.values(avg_speed).map(as => [as]); // Create data points for each player\n\n    // Format the payload for the graph\n    msg.payload = [\n        {\n            \"series\": series,  // Names of the players as series\n            \"data\": data,      // Heart rate values for each player\n            \"labels\": [\"\"]     // X-axis labels (e.g., time stamps can be added if needed)\n        }\n    ];\n\n    // Return the message to pass the formatted data to the graph\n    return msg;\n} else {\n    // Handle case where the required data is missing\n    node.warn(\"Heart rate data is missing for the player\");\n    return null;\n}\n",
         "outputs": 1,
@@ -3311,14 +3319,14 @@
         "y": 180,
         "wires": [
             [
-                "3cdc82b06f6ea1c8"
+                "9f538dec8317e06b"
             ]
         ]
     },
     {
-        "id": "68d719f3384e0867",
+        "id": "1b1024ee47cc78ee",
         "type": "ui_template",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "group": "914464c7227e1a69",
         "name": "CSS",
         "order": 7,
@@ -3337,9 +3345,9 @@
         ]
     },
     {
-        "id": "ef4202ee8fd985c9",
+        "id": "d243176796d072b5",
         "type": "ui_chart",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "TOT_KM",
         "group": "914464c7227e1a69",
         "order": 2,
@@ -3381,9 +3389,9 @@
         ]
     },
     {
-        "id": "74141e2021f296dd",
+        "id": "98267c06e395637f",
         "type": "function",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "TOT_KM_extr",
         "func": "// Ensure the payload is a JSON object\nif (typeof msg.payload === 'string') {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (e) {\n        node.error(\"Failed to parse JSON\", e);\n        return null;\n    }\n}\n\n// Retrieve or initialize the heartRates object from the flow context\nvar tot_km = flow.get('TOTAL_KM') || {};\n\n// Check if msg.payload has the necessary 'player_id' and 'heart_rate' properties\nif (msg.payload && msg.payload.player_id !== undefined) {\n    // Extract player ID and heart rate\n    var playerId = msg.payload.player_id.toString(); // Convert player ID to string for consistency\n    var t_km = msg.payload.distance_traveled_km;\n\n    // Update the heart rate for this player in the heartRates object\n    tot_km[playerId] = t_km;\n\n    // Store the updated heartRates object back into the flow context\n    flow.set('TOTAL_KM', tot_km);\n\n    // Prepare the data for the chart\n    var series = Object.keys(tot_km).map(id => [id]); // Create series names\n    var data = Object.values(tot_km).map(km => [km]); // Create data points for each player\n\n    // Format the payload for the graph\n    msg.payload = [\n        {\n            \"series\": series,  // Names of the players as series\n            \"data\": data,      // Heart rate values for each player\n            \"labels\": [\"\"]     // X-axis labels (e.g., time stamps can be added if needed)\n        }\n    ];\n\n    // Return the message to pass the formatted data to the graph\n    return msg;\n} else {\n    // Handle case where the required data is missing\n    node.warn(\"Heart rate data is missing for the player\");\n    return null;\n}\n",
         "outputs": 1,
@@ -3396,14 +3404,14 @@
         "y": 220,
         "wires": [
             [
-                "ef4202ee8fd985c9"
+                "d243176796d072b5"
             ]
         ]
     },
     {
-        "id": "91993287dcc7ceae",
+        "id": "7d4daeff015be8a1",
         "type": "ui_chart",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "AVG_CAL",
         "group": "914464c7227e1a69",
         "order": 4,
@@ -3445,9 +3453,9 @@
         ]
     },
     {
-        "id": "c0bef20e16d1f8db",
+        "id": "dc1159204d8cd322",
         "type": "function",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "AVG_CAL_extr",
         "func": "// Ensure the payload is a JSON object\nif (typeof msg.payload === 'string') {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (e) {\n        node.error(\"Failed to parse JSON\", e);\n        return null;\n    }\n}\n\n// Retrieve or initialize the heartRates object from the flow context\nvar tot_cal = flow.get('TOTAL_CAL') || {};\n\n// Check if msg.payload has the necessary 'player_id' and 'heart_rate' properties\nif (msg.payload && msg.payload.player_id !== undefined) {\n    // Extract player ID and heart rate\n    var playerId = msg.payload.player_id.toString(); // Convert player ID to string for consistency\n    var cal = msg.payload.calories_consumed;\n\n    // Update the heart rate for this player in the heartRates object\n    tot_cal[playerId] = cal;\n\n    // Store the updated heartRates object back into the flow context\n    flow.set('TOTAL_CAL', tot_cal);\n\n    // Prepare the data for the chart\n    var series = Object.keys(tot_cal).map(id => [id]); // Create series names\n    var data = Object.values(tot_cal).map(cl => [cl]); // Create data points for each player\n\n    // Format the payload for the graph\n    msg.payload = [\n        {\n            \"series\": series,  // Names of the players as series\n            \"data\": data,      // Heart rate values for each player\n            \"labels\": [\"\"]     // X-axis labels (e.g., time stamps can be added if needed)\n        }\n    ];\n\n    // Return the message to pass the formatted data to the graph\n    return msg;\n} else {\n    // Handle case where the required data is missing\n    node.warn(\"Heart rate data is missing for the player\");\n    return null;\n}\n",
         "outputs": 1,
@@ -3460,14 +3468,14 @@
         "y": 260,
         "wires": [
             [
-                "91993287dcc7ceae"
+                "7d4daeff015be8a1"
             ]
         ]
     },
     {
-        "id": "4a5e5cc38a492372",
+        "id": "63f05c8aa3d53d66",
         "type": "ui_chart",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "AVG_IMP",
         "group": "914464c7227e1a69",
         "order": 5,
@@ -3509,9 +3517,9 @@
         ]
     },
     {
-        "id": "ce13747852b67acf",
+        "id": "58c60e948e4d57be",
         "type": "function",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "AVG_IMP_extr",
         "func": "// Ensure the payload is a JSON object\nif (typeof msg.payload === 'string') {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (e) {\n        node.error(\"Failed to parse JSON\", e);\n        return null;\n    }\n}\n\n// Retrieve or initialize the heartRates object from the flow context\nvar avg_impact = flow.get('IMPACT') || {};\n\n// Check if msg.payload has the necessary 'player_id' and 'heart_rate' properties\nif (msg.payload && msg.payload.player_id !== undefined) {\n    // Extract player ID and heart rate\n    var playerId = msg.payload.player_id.toString(); // Convert player ID to string for consistency\n    var imp = msg.payload.impacts.average_impact_force;\n\n    // Update the heart rate for this player in the heartRates object\n    avg_impact[playerId] = imp;\n\n    // Store the updated heartRates object back into the flow context\n    flow.set('IMPACT', avg_impact);\n\n    // Prepare the data for the chart\n    var series = Object.keys(avg_impact).map(id => [id]); // Create series names\n    var data = Object.values(avg_impact).map(im => [im]); // Create data points for each player\n\n    // Format the payload for the graph\n    msg.payload = [\n        {\n            \"series\": series,  // Names of the players as series\n            \"data\": data,      // Heart rate values for each player\n            \"labels\": [\"\"]     // X-axis labels (e.g., time stamps can be added if needed)\n        }\n    ];\n\n    // Return the message to pass the formatted data to the graph\n    return msg;\n} else {\n    // Handle case where the required data is missing\n    node.warn(\"Heart rate data is missing for the player\");\n    return null;\n}\n",
         "outputs": 1,
@@ -3524,14 +3532,14 @@
         "y": 300,
         "wires": [
             [
-                "4a5e5cc38a492372"
+                "63f05c8aa3d53d66"
             ]
         ]
     },
     {
-        "id": "5dff2918219aeadb",
+        "id": "8cb2a22788c35000",
         "type": "ui_chart",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "IMP_RATIO",
         "group": "914464c7227e1a69",
         "order": 6,
@@ -3573,9 +3581,9 @@
         ]
     },
     {
-        "id": "61da415c99a457e8",
+        "id": "80679a8ed50576ca",
         "type": "function",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "IMP_RATIO_extr",
         "func": "// Ensure the payload is a JSON object\nif (typeof msg.payload === 'string') {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (e) {\n        node.error(\"Failed to parse JSON\", e);\n        return null;\n    }\n}\n\n// Retrieve or initialize the heartRates object from the flow context\nvar imp_to_play = flow.get('RATIO') || {};\n\n// Check if msg.payload has the necessary 'player_id' and 'heart_rate' properties\nif (msg.payload && msg.payload.player_id !== undefined) {\n    // Extract player ID and heart rate\n    var playerId = msg.payload.player_id.toString(); // Convert player ID to string for consistency\n    var imp = msg.payload.impact_to_play_ratio;\n\n    // Update the heart rate for this player in the heartRates object\n    imp_to_play[playerId] = imp;\n\n    // Store the updated heartRates object back into the flow context\n    flow.set('RATIO', imp_to_play);\n\n    // Prepare the data for the chart\n    var series = Object.keys(imp_to_play).map(id => [id]); // Create series names\n    var data = Object.values(imp_to_play).map(im => [im]); // Create data points for each player\n\n    // Format the payload for the graph\n    msg.payload = [\n        {\n            \"series\": series,  // Names of the players as series\n            \"data\": data,      // Heart rate values for each player\n            \"labels\": [\"\"]     // X-axis labels (e.g., time stamps can be added if needed)\n        }\n    ];\n\n    // Return the message to pass the formatted data to the graph\n    return msg;\n} else {\n    // Handle case where the required data is missing\n    node.warn(\"Heart rate data is missing for the player\");\n    return null;\n}\n",
         "outputs": 1,
@@ -3588,14 +3596,14 @@
         "y": 340,
         "wires": [
             [
-                "5dff2918219aeadb"
+                "8cb2a22788c35000"
             ]
         ]
     },
     {
-        "id": "955854a5b2dbb0a3",
+        "id": "9c9ccfa163519073",
         "type": "ui_chart",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "SPD_RATIO",
         "group": "914464c7227e1a69",
         "order": 3,
@@ -3637,9 +3645,9 @@
         ]
     },
     {
-        "id": "da2ce1329675a617",
+        "id": "6aa9475f7e1a3ed8",
         "type": "function",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "SPD_RATIO_extr",
         "func": "// Ensure the payload is a JSON object\nif (typeof msg.payload === 'string') {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (e) {\n        node.error(\"Failed to parse JSON\", e);\n        return null;\n    }\n}\n\n// Retrieve or initialize the heartRates object from the flow context\nvar spd_ratio = flow.get('SPEED') || {};\n\n// Check if msg.payload has the necessary 'player_id' and 'heart_rate' properties\nif (msg.payload && msg.payload.player_id !== undefined) {\n    // Extract player ID and heart rate\n    var playerId = msg.payload.player_id.toString(); // Convert player ID to string for consistency\n    var spd = msg.payload.velocity_variability;\n\n    // Update the heart rate for this player in the heartRates object\n    spd_ratio[playerId] = spd;\n\n    // Store the updated heartRates object back into the flow context\n    flow.set('SPEED', spd_ratio);\n\n    // Prepare the data for the chart\n    var series = Object.keys(spd_ratio).map(id => [id]); // Create series names\n    var data = Object.values(spd_ratio).map(sp => [sp]); // Create data points for each player\n\n    // Format the payload for the graph\n    msg.payload = [\n        {\n            \"series\": series,  // Names of the players as series\n            \"data\": data,      // Heart rate values for each player\n            \"labels\": [\"\"]     // X-axis labels (e.g., time stamps can be added if needed)\n        }\n    ];\n\n    // Return the message to pass the formatted data to the graph\n    return msg;\n} else {\n    // Handle case where the required data is missing\n    node.warn(\"Heart rate data is missing for the player\");\n    return null;\n}\n",
         "outputs": 1,
@@ -3652,14 +3660,14 @@
         "y": 440,
         "wires": [
             [
-                "955854a5b2dbb0a3"
+                "9c9ccfa163519073"
             ]
         ]
     },
     {
-        "id": "08ae540b66c08abd",
+        "id": "413b0ee41b4d8bbe",
         "type": "function",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "name": "MAX_IMP_extr",
         "func": "// Ensure the payload is a JSON object\nif (typeof msg.payload === 'string') {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (e) {\n        node.error(\"Failed to parse JSON\", e);\n        return null;\n    }\n}\n\n// Retrieve or initialize the impact object from the flow context\nvar impact = flow.get('impact') || {};\nvar maxImpact = flow.get('MAX_impact') || -Infinity; // Initialize with a very low number\nvar maxImpactPlayer = flow.get('MAX_impact_player') || \"\"; // Initialize with empty string\n\n// Check if msg.payload has the necessary 'player_id' and 'impact_severity_index' properties\nif (msg.payload && msg.payload.player_id !== undefined) {\n    // Extract player ID and impact severity index\n    var playerId = msg.payload.player_id.toString(); // Convert player ID to string for consistency\n    var imp = msg.payload.impact_severity_index;\n\n    // Update the impact for this player in the impact object\n    impact[playerId] = imp;\n\n    // Store the updated impact object back into the flow context\n    flow.set('impact', impact);\n\n    // Check if the current impact severity index is higher than the current max\n    if (imp > maxImpact) {\n        maxImpact = imp;\n        maxImpactPlayer = playerId; // Update the player ID with the maximum impact\n        flow.set('MAX_impact', maxImpact); // Update the max impact in the flow context\n        flow.set('MAX_impact_player', maxImpactPlayer); // Update the player with the max impact\n    }\n}\n\n// Prepare the output message with the player having the maximum impact severity index\nmsg.payload = {\n    player_id: maxImpactPlayer,\n    impact_severity_index: maxImpact\n};\n\nflow.set('impact', {});\nflow.set('MAX_impact', -Infinity);\nflow.set('MAX_impact_player', \"\");\n\n// Return the message with the player having the highest impact severity index\nreturn msg;\n",
         "outputs": 1,
@@ -3672,15 +3680,15 @@
         "y": 500,
         "wires": [
             [
-                "0970b175e6972627",
-                "4358c672dc612193"
+                "e807128d8a11c8bd",
+                "54ed88982badb602"
             ]
         ]
     },
     {
-        "id": "0970b175e6972627",
+        "id": "e807128d8a11c8bd",
         "type": "ui_text",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "group": "4b55eb95bc7cccf8",
         "order": 2,
         "width": 0,
@@ -3699,9 +3707,9 @@
         "wires": []
     },
     {
-        "id": "4358c672dc612193",
+        "id": "54ed88982badb602",
         "type": "ui_text",
-        "z": "acbb8b19f36933fc",
+        "z": "ad3a7eee14e7200e",
         "group": "4b55eb95bc7cccf8",
         "order": 1,
         "width": 0,

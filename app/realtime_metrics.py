@@ -31,22 +31,6 @@ def get_latest_collection():
     
     return latest_collection
 
-def calculate_impact_results(collection_name):
-    try:
-        collection = db[collection_name]
-
-        metrics = {}  # Initialize metrics dict
-
-        pipeline_impacts_above_threshold = [
-                {"$match": {"impacts.impact_force": {"$gt": 5.5}}},  # Only impacts > 5.3
-                {"$project": {"player_id": 1, "impacts.impact_force": 1, "timestamp": 1}}  # Return player_id and force
-            ]
-        impacts_result = list(collection.aggregate(pipeline_impacts_above_threshold))
-        return impacts_result
-    except Exception as e:
-        print(f"Error querying MongoDB: {e}")
-        return None
-
 def calculate_metrics(collection_name):
     try:
         collection = db[collection_name]
@@ -117,8 +101,6 @@ def calculate_metrics(collection_name):
                 # Calculate additional metrics
                 impact_to_play_ratio = impact_count/80  
                 max_heart_rate = int(random.uniform(160, 210))
-                impact_severity_index = round(random.uniform(1, 10), 1)  # Placeholder; adjust as needed
-
 
                 metrics[player_id] = {
                     "player_id": player_id,
@@ -137,8 +119,7 @@ def calculate_metrics(collection_name):
                     },
                     "impact_to_play_ratio": impact_to_play_ratio,
                     "velocity_variability": velocity_variability,
-                    "max_heart_rate": max_heart_rate,
-                    "impact_severity_index": impact_severity_index,
+                    "max_heart_rate": max_heart_rate
                 }
             else:
                 metrics[player_id] = {
@@ -157,8 +138,7 @@ def calculate_metrics(collection_name):
                     },
                     "impact_to_play_ratio": 0.0,
                     "velocity_variability": 0.0,
-                    "max_heart_rate": 0,
-                    "impact_severity_index": 0.0
+                    "max_heart_rate": 0
                 }
 
         return metrics
@@ -182,29 +162,14 @@ def publish_metrics(metrics):
     mqtt_client.loop_stop()
     mqtt_client.disconnect()
 
-def publish_impacts(impacts_result):
-    mqtt_client = mqtt.Client()
-    mqtt_client.connect(MQTT_BROKER, MQTT_PORT)
-    mqtt_client.loop_start()
-
-    message_impacts = json.dumps(impacts_result)
-    mqtt_client.publish(MQTT_TOPIC_IMPACTS, message_impacts)
-    print(f"Published impacts: {impacts_result}")
-
-    mqtt_client.loop_stop()
-    mqtt_client.disconnect()
-
 def main():
     latest_collection = get_latest_collection()
     if latest_collection:
         # Calculate metrics from the latest collection
         metrics = calculate_metrics(latest_collection)
-        impacts_result = calculate_impact_results(latest_collection)
         if metrics:
             # Publish metrics via MQTT
             publish_metrics(metrics)
-            print()
-            print(impacts_result)
 
         else:
             print("No metrics calculated.")
