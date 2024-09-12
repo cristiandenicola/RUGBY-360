@@ -27,9 +27,9 @@ ROLES = {
     8: 'number_eight',
     9: 'scrum_half',
     10: 'fly_half',
-    11: 'center',
+    11: 'wing',
     12: 'center',
-    13: 'wing',
+    13: 'center',
     14: 'wing',
     15: 'full_back'
 }
@@ -52,7 +52,7 @@ rome_timezone = timezone(timedelta(hours=2))
 
 def generate_metrics(player_id, role, elapsed_time):
     global impact_counters, calorie_counters, top_speed  # Access the global dictionaries
-    
+
     # Randomly decide if an impact occurs (40% probability)
     impact_occurs = random.random() < 0.4  # 40% probability
 
@@ -61,18 +61,22 @@ def generate_metrics(player_id, role, elapsed_time):
         impact_counters[player_id] += 1
 
     # Dynamic coefficients based on elapsed time (e.g., increased heart rate, decreased speed)
-    fatigue_coefficient = max(1.0, min(1.5, 1.0 + 0.01 * (elapsed_time - 60)))
+    fatigue_coefficient = max(1.0, min(1.2, 1.0 + 0.005 * (elapsed_time - 60)))  # Adjusted fatigue coefficient
     gps_velocity_coefficient = 1 / fatigue_coefficient if elapsed_time > 60 else 1.0
 
     # Speed based on the player's role
     if role in ['prop', 'hooker']:
-        gps_velocity = round(random.uniform(0, 10) * gps_velocity_coefficient, 1)
+        gps_velocity = round(random.uniform(0, 8) * gps_velocity_coefficient, 1)  # Reduced max for slower roles
+        calorie_coefficent = 4
     elif role in ['lock', 'flanker', 'number_eight']:
-        gps_velocity = round(random.uniform(0, 20) * gps_velocity_coefficient, 1)
+        gps_velocity = round(random.uniform(0, 16) * gps_velocity_coefficient, 1)
+        calorie_coefficent = 2
     elif role in ['scrum_half', 'fly_half', 'center']:
-        gps_velocity = round(random.uniform(0, 30) * gps_velocity_coefficient, 1)
+        gps_velocity = round(random.uniform(0, 22) * gps_velocity_coefficient, 1)
+        calorie_coefficent = 1.5
     elif role in ['wing', 'full_back']:
-        gps_velocity = round(random.uniform(0, 40) * gps_velocity_coefficient, 1)
+        gps_velocity = round(random.uniform(0, 25) * gps_velocity_coefficient, 1)
+        calorie_coefficent = 1
 
     # Save the top speed
     if gps_velocity > top_speed[player_id]:
@@ -85,7 +89,7 @@ def generate_metrics(player_id, role, elapsed_time):
     heart_rate = int(base_heart_rate + heart_rate_increase_due_to_velocity + heart_rate_increase_due_to_impacts)
 
     # Calculate calories based on heart rate and gps_velocity
-    calorie_increment = (heart_rate / 150.0) * (gps_velocity / 10.0) * 5.0  # Arbitrary formula for calorie calculation
+    calorie_increment = round(random.uniform(5, 15) * gps_velocity * calorie_coefficent / 10.0, 1)  # Arbitrary formula for calorie calculation
     calorie_counters[player_id] += calorie_increment
 
     # Calculate the max heart rate
@@ -107,7 +111,11 @@ def generate_metrics(player_id, role, elapsed_time):
 
     # Calculate impact force based on speed and frequency of impacts
     if impact_occurs:
-        impact_force = round(gps_velocity * (1 + impact_counters[player_id] * 0.1), 1)  # Impact force increases with speed and number of impacts
+        base_impact_force = round(random.uniform(0.1, 5), 1)  # Random value between 0.1 and 5
+        if random.random() < 0.05:  # 5% probability to exceed 5
+            impact_force = round(random.uniform(5.1, 6.0), 1)  # Limit impact force to a max of 6
+        else:
+            impact_force = base_impact_force
     else:
         impact_force = 0.0
 
@@ -152,11 +160,10 @@ def generate_metrics(player_id, role, elapsed_time):
     metrics["max_heart_rate"] = {"max_heart_rate": max_heart_rate}
 
     # Impact severity index: derived from the force and frequency of impacts
-    impact_severity_index = impact_counters[player_id] * (impact_force / 10.0)
-    metrics["impact_severity_index"] = {"severity_index": round(impact_severity_index, 1)}
+    metrics["impact_severity_index"] = {"severity_index": round(impact_force, 1)}
 
     return metrics
-
+    
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
         print(f"Connected to MQTT broker with result code {rc}")
@@ -219,7 +226,7 @@ def main():
 
             elapsed_time += 1  # Increment elapsed time
             time.sleep(1)  # Simulate one second of real time
-
+            
     except KeyboardInterrupt:
         print("\nStopping sensor simulation...")
         mqtt_client.loop_stop()  # Stop the MQTT thread
