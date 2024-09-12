@@ -27,9 +27,9 @@ ROLES = {
     8: 'number_eight',
     9: 'scrum_half',
     10: 'fly_half',
-    11: 'center',
+    11: 'wing',
     12: 'center',
-    13: 'wing',
+    13: 'center',
     14: 'wing',
     15: 'full_back'
 }
@@ -226,7 +226,7 @@ def main():
 
             elapsed_time += 1  # Increment elapsed time
             time.sleep(1)  # Simulate one second of real time
-
+            
     except KeyboardInterrupt:
         print("\nStopping sensor simulation...")
         mqtt_client.loop_stop()  # Stop the MQTT thread

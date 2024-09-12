@@ -1,16 +1,16 @@
+import os
 import json
-import random
 import paho.mqtt.client as mqtt
 from pymongo import MongoClient, DESCENDING
 from datetime import timedelta, timezone
 
-# settings
-MQTT_BROKER = 'localhost'
-MQTT_PORT = 1883
+# settings (can be overridden by environment variables)
+MQTT_BROKER = os.getenv('MQTT_BROKER', 'localhost')
+MQTT_PORT = int(os.getenv('MQTT_PORT', 1883))
 MQTT_TOPIC_TEMPLATE_METRICS = 'rugby/players/{}/realtime/metrics'
 MQTT_TOPIC_IMPACTS = 'rugby/players/impacts'
 
-MONGO_URI = "mongodb://localhost:27017/"
+MONGO_URI = os.getenv('MONGO_URI', "mongodb://localhost:27017/")
 DATABASE_NAME = "rugbyDB"
 BASE_COLLECTION_NAME = "simulations"
 
@@ -28,83 +28,60 @@ def get_latest_collection():
         return None
     
     latest_collection = max(simulation_collections)
-    
     return latest_collection
 
 def calculate_metrics(collection_name):
     try:
         collection = db[collection_name]
 
-        metrics = {}  # Initialize metrics dict
+        # Pipeline to fetch aggregated metrics for all players at once
+        pipeline = [
+            {"$match": {"player_id": {"$in": list(range(1, 16))}}},
+            {"$group": {
+                "_id": "$player_id",
+                "avg_velocity": {"$avg": "$gps.velocity"},
+                "avg_impact_force": {"$avg": {"$cond": [{"$ne": ["$impacts.impact_force", 0]}, "$impacts.impact_force", None]}},
+                "max_heart_rate": {"$max": "$heart_rate.heart_rate"},
+                "latest_data": {"$last": "$$ROOT"}
+            }}
+        ]
 
-        for player_id in range(1, 16):  # Rugby has 15 players per team
+        results = list(collection.aggregate(pipeline))
 
-            pipeline = [
-                {"$match": {"player_id": player_id}},
-                {"$sort": {"timestamp": DESCENDING}},
-                {"$limit": 1}
-            ]
-            result = list(collection.aggregate(pipeline))
+        metrics = {}
 
+        for result in results:
+            player_id = result["_id"]
+            latest_data = result["latest_data"]
 
-            pipeline_avg_velocity = [
-                {"$match": {"player_id": player_id}},
-                {"$group": {"_id": None, "avg_velocity": {"$avg": "$gps.velocity"}}}
-            ]
-            avg_velocity_result = list(collection.aggregate(pipeline_avg_velocity))
-            avg_velocity = avg_velocity_result[0]["avg_velocity"] if avg_velocity_result else 0.0
+            # Extract metrics
+            avg_velocity = result["avg_velocity"] if result["avg_velocity"] else 0.0
+            avg_force = result["avg_impact_force"] if result["avg_impact_force"] else 0.0
+            max_heart_rate = result["max_heart_rate"] if result["max_heart_rate"] else 0
 
-            pipeline_avg_force = [
-                {"$match": {"player_id": player_id}},
-                {"$match": {"impacts.impact_force": {"$ne": 0}}},
-                {"$group": {"_id": None, "avg_force": {"$avg": "$impacts.impact_force"}}}
-            ]
+            # Calculate velocity variability
+            velocities = [d["gps"]["velocity"] for d in collection.find({"player_id": player_id}, {"gps.velocity": 1, "_id": 0})]
+            velocity_diffs = [abs(velocities[i] - velocities[i - 1]) for i in range(1, len(velocities))]
+            velocity_variability = sum(velocity_diffs) / len(velocity_diffs) if velocity_diffs else 0.0
 
-            avg_force_result = list(collection.aggregate(pipeline_avg_force))
-            avg_force = avg_force_result[0]["avg_force"] if avg_force_result else 0.0
-
-            pipeline_velocity_diff = [
-                {"$match": {"player_id": player_id}},
-                {"$sort": {"timestamp": 1}},  # Ordina i documenti per timestamp in ordine crescente
-                {"$group": {
-                    "_id": None,
-                    "velocities": {"$push": "$gps.velocity"}  # Crea una lista di tutte le velocità
-                }}
-            ]
-            velocity_diff_result = list(collection.aggregate(pipeline_velocity_diff))
-            if velocity_diff_result:
-                velocities = velocity_diff_result[0]["velocities"]
-                velocity_diffs = [abs(velocities[i] - velocities[i - 1]) for i in range(1, len(velocities))]
-                velocity_variability = sum(velocity_diffs) / len(velocity_diffs) if velocity_diffs else 0.0
-            else:
-                velocity_variability = 0.0
-
-
-            if result:
-                player_data = result[0]
-
+            if latest_data:
                 # Extract necessary fields
-                velocity = avg_velocity
-                elapsed_time = player_data["elapsed_time"]
-                calories = player_data["calories_consumed"]["calories"]
-                heart_rate = player_data["heart_rate"]["heart_rate"]
-                body_temperature = player_data["temperature"]["body_temperature"]
-                systolic = player_data["blood_pressure"]["systolic"]
-                diastolic = player_data["blood_pressure"]["diastolic"]
-                impact_count = player_data["impacts"]["impact_count"]
-                impact_force =  avg_force
+                elapsed_time = latest_data["elapsed_time"]
+                calories = latest_data["calories_consumed"]["calories"]
+                heart_rate = latest_data["heart_rate"]["heart_rate"]
+                body_temperature = latest_data["temperature"]["body_temperature"]
+                systolic = latest_data["blood_pressure"]["systolic"]
+                diastolic = latest_data["blood_pressure"]["diastolic"]
+                impact_count = latest_data["impacts"]["impact_count"]
 
                 # Derived metrics
-                distance_traveled = velocity * (elapsed_time / 60.0)  # Convert minutes to hours for km
+                distance_traveled = avg_velocity * (elapsed_time / 60.0)  # Convert minutes to hours for km
                 distance_km = round(distance_traveled, 2)
-
-                # Calculate additional metrics
-                impact_to_play_ratio = impact_count/80  
-                max_heart_rate = int(random.uniform(160, 210))
+                impact_to_play_ratio = impact_count / 80
 
                 metrics[player_id] = {
                     "player_id": player_id,
-                    "average_velocity": round(velocity, 2),
+                    "average_velocity": round(avg_velocity, 2),
                     "distance_traveled_km": round(distance_km, 2),
                     "calories_consumed": round(calories, 2),
                     "heart_rate": heart_rate,
@@ -115,10 +92,10 @@ def calculate_metrics(collection_name):
                     },
                     "impacts": {
                         "impact_count": impact_count,
-                        "average_impact_force": impact_force
+                        "average_impact_force": avg_force
                     },
                     "impact_to_play_ratio": impact_to_play_ratio,
-                    "velocity_variability": velocity_variability,
+                    "velocity_variability": round(velocity_variability, 2),
                     "max_heart_rate": max_heart_rate
                 }
             else:
@@ -152,15 +129,18 @@ def publish_metrics(metrics):
     mqtt_client.connect(MQTT_BROKER, MQTT_PORT)
     mqtt_client.loop_start()
 
-    for player_id, data in metrics.items():
-        # Publish all metrics in a single MQTT message
-        topic_metrics = MQTT_TOPIC_TEMPLATE_METRICS.format(player_id)
-        message_metrics = json.dumps(data)
-        mqtt_client.publish(topic_metrics, message_metrics)
-        print(f"Published metrics for Player {player_id}: {data}")
-
-    mqtt_client.loop_stop()
-    mqtt_client.disconnect()
+    try:
+        for player_id, data in metrics.items():
+            # Publish all metrics in a single MQTT message
+            topic_metrics = MQTT_TOPIC_TEMPLATE_METRICS.format(player_id)
+            message_metrics = json.dumps(data)
+            mqtt_client.publish(topic_metrics, message_metrics)
+            print(f"Published metrics for Player {player_id}: {data}")
+    except Exception as e:
+        print(f"Failed to publish metrics: {e}")
+    finally:
+        mqtt_client.loop_stop()
+        mqtt_client.disconnect()
 
 def main():
     latest_collection = get_latest_collection()
@@ -170,7 +150,6 @@ def main():
         if metrics:
             # Publish metrics via MQTT
             publish_metrics(metrics)
-
         else:
             print("No metrics calculated.")
     else:
