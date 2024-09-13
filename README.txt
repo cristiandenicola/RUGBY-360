@@ -28,6 +28,8 @@ RUGBY-360
 │   │   ├── WINDOWS_installation_guide.txt
 │   ├── mongo_dump
 │   │   ├── rugbyDB.simulations.json
+│   ├── video
+│   │   ├── DEMO.mp4
 ├── requirements.txt
 
 Check WINDOWS_installation_guide.txt to figure out how to run the project.
