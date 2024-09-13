@@ -1,13 +1,5 @@
 [
     {
-        "id": "53f99c037dcacdcf",
-        "type": "tab",
-        "label": "Flow 1",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "6d003b7f94ce6f96",
         "type": "tab",
         "label": "Data Gathering (mongoDB version)",
@@ -3254,7 +3246,6 @@
                 "dc1159204d8cd322",
                 "58c60e948e4d57be",
                 "6aa9475f7e1a3ed8",
-                "413b0ee41b4d8bbe",
                 "80679a8ed50576ca"
             ]
         ]
@@ -3663,68 +3654,5 @@
                 "9c9ccfa163519073"
             ]
         ]
-    },
-    {
-        "id": "413b0ee41b4d8bbe",
-        "type": "function",
-        "z": "ad3a7eee14e7200e",
-        "name": "MAX_IMP_extr",
-        "func": "// Ensure the payload is a JSON object\nif (typeof msg.payload === 'string') {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (e) {\n        node.error(\"Failed to parse JSON\", e);\n        return null;\n    }\n}\n\n// Retrieve or initialize the impact object from the flow context\nvar impact = flow.get('impact') || {};\nvar maxImpact = flow.get('MAX_impact') || -Infinity; // Initialize with a very low number\nvar maxImpactPlayer = flow.get('MAX_impact_player') || \"\"; // Initialize with empty string\n\n// Check if msg.payload has the necessary 'player_id' and 'impact_severity_index' properties\nif (msg.payload && msg.payload.player_id !== undefined) {\n    // Extract player ID and impact severity index\n    var playerId = msg.payload.player_id.toString(); // Convert player ID to string for consistency\n    var imp = msg.payload.impact_severity_index;\n\n    // Update the impact for this player in the impact object\n    impact[playerId] = imp;\n\n    // Store the updated impact object back into the flow context\n    flow.set('impact', impact);\n\n    // Check if the current impact severity index is higher than the current max\n    if (imp > maxImpact) {\n        maxImpact = imp;\n        maxImpactPlayer = playerId; // Update the player ID with the maximum impact\n        flow.set('MAX_impact', maxImpact); // Update the max impact in the flow context\n        flow.set('MAX_impact_player', maxImpactPlayer); // Update the player with the max impact\n    }\n}\n\n// Prepare the output message with the player having the maximum impact severity index\nmsg.payload = {\n    player_id: maxImpactPlayer,\n    impact_severity_index: maxImpact\n};\n\nflow.set('impact', {});\nflow.set('MAX_impact', -Infinity);\nflow.set('MAX_impact_player', \"\");\n\n// Return the message with the player having the highest impact severity index\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 680,
-        "y": 480,
-        "wires": [
-            [
-                "e807128d8a11c8bd",
-                "54ed88982badb602"
-            ]
-        ]
-    },
-    {
-        "id": "e807128d8a11c8bd",
-        "type": "ui_text",
-        "z": "ad3a7eee14e7200e",
-        "group": "4b55eb95bc7cccf8",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Severity",
-        "format": "{{msg.payload.impact_severity_index}}",
-        "layout": "row-center",
-        "className": "",
-        "style": true,
-        "font": "Arial Black,Arial Black,Gadget,sans-serif",
-        "fontSize": "16",
-        "color": "#e72323",
-        "x": 860,
-        "y": 520,
-        "wires": []
-    },
-    {
-        "id": "54ed88982badb602",
-        "type": "ui_text",
-        "z": "ad3a7eee14e7200e",
-        "group": "4b55eb95bc7cccf8",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Player",
-        "format": "{{msg.payload.player_id}}",
-        "layout": "col-center",
-        "className": "",
-        "style": true,
-        "font": "Arial Black,Arial Black,Gadget,sans-serif",
-        "fontSize": "22",
-        "color": "#000000",
-        "x": 850,
-        "y": 480,
-        "wires": []
     }
 ]
